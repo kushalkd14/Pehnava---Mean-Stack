@@ -1,0 +1,8 @@
+import mongoose from 'mongoose';
+
+export async function connectDatabase(uri: string): Promise<void> {
+  await mongoose.connect(uri, {
+    serverSelectionTimeoutMS: 2000,
+  });
+  console.info('MongoDB connected successfully.');
+}

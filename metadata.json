@@ -1,0 +1,8 @@
+{
+  "name": "Pahnave Wale Bhaiya - Fashion Store in Ajmer",
+  "description": "Premium boutique fashion showcase website for Pahnave Wale Bhaiya, an Indian contemporary and festive fashion boutique in Ajmer, Rajasthan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
