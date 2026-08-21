@@ -8,6 +8,12 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
+## 👨‍💻 Made By
+
+**Saksham Raj Singh Chauhan**  
+Computer Science & Engineering — AI & ML  
+GitHub: [@Saksham1105](https://github.com/Saksham1105)
+
 ## Live Website
 
 **Visit the deployed Pehnava RJ01 website:**
