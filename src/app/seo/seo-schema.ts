@@ -1,6 +1,6 @@
 import { BUSINESS_CONFIG } from '../config/business';
 
-const SITE_URL = 'https://pehnava-rj01.pages.dev/';
+const SITE_URL = 'https://pehnava---mean-stack.sswaggyiirush.workers.dev/';
 const SOCIAL_IMAGE = 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop';
 
 export function buildSeoSchema(): Record<string, unknown> {
