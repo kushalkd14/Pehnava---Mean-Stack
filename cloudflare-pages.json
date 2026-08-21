@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm ci && npm run build",
+  "buildOutputDirectory": "dist/pehnava-rj01/browser",
+  "nodeVersion": "22"
+}
