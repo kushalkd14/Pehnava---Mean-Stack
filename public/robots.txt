@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pehnava-rj01.pages.dev/sitemap.xml
+Sitemap: https://pehnava---mean-stack.sswaggyiirush.workers.dev/sitemap.xml
