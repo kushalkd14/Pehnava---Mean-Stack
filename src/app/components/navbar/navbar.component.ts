@@ -4,6 +4,8 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
 import { Store } from '../../models/catalog.models';
 
+const MOBILE_MENU_TRANSITION_MS = 300;
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -91,7 +93,6 @@ import { Store } from '../../models/catalog.models';
       </div>
     </header>
 
-    <!-- Mobile navigation lives outside the header layout so viewport geometry stays deterministic. -->
     @if (mobileMenuMounted) {
       <div
         id="mobile-navigation-shell"
@@ -206,11 +207,6 @@ export class NavbarComponent implements OnDestroy {
   @Output() openWhatsApp = new EventEmitter<void>();
 
   readonly businessConfig = BUSINESS_CONFIG;
-  isScrolled = false;
-  mobileMenuOpen = false;
-  mobileMenuMounted = false;
-  private mobileMenuCloseTimer: ReturnType<typeof setTimeout> | null = null;
-
   readonly navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'The Edit', href: '#the-edit' },
@@ -223,11 +219,15 @@ export class NavbarComponent implements OnDestroy {
     { name: 'Visit Store', href: '#visit-us' },
   ];
 
+  isScrolled = false;
+  mobileMenuOpen = false;
+  mobileMenuMounted = false;
+
+  private mobileMenuCloseTimer: ReturnType<typeof setTimeout> | null = null;
+
   @HostListener('window:scroll')
   onScroll(): void {
-    if (typeof window !== 'undefined') {
-      this.isScrolled = window.scrollY > 20;
-    }
+    this.isScrolled = typeof window !== 'undefined' && window.scrollY > 20;
   }
 
   @HostListener('window:keydown.escape')
@@ -238,21 +238,19 @@ export class NavbarComponent implements OnDestroy {
   }
 
   toggleMobileMenu(): void {
-    if (this.mobileMenuOpen) {
-      this.closeMobileMenu();
-    } else {
-      this.openMobileMenu();
-    }
+    this.mobileMenuOpen ? this.closeMobileMenu() : this.openMobileMenu();
   }
 
   openMobileMenu(): void {
-    if (this.mobileMenuCloseTimer) {
-      clearTimeout(this.mobileMenuCloseTimer);
-      this.mobileMenuCloseTimer = null;
+    this.clearCloseTimer();
+    this.mobileMenuMounted = true;
+
+    if (typeof window === 'undefined') {
+      this.mobileMenuOpen = true;
+      return;
     }
 
-    this.mobileMenuMounted = true;
-    requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
       this.mobileMenuOpen = true;
       this.setPageScrollLocked(true);
     });
@@ -266,24 +264,11 @@ export class NavbarComponent implements OnDestroy {
 
     this.mobileMenuOpen = false;
     this.setPageScrollLocked(false);
-
-    if (this.mobileMenuCloseTimer) {
-      clearTimeout(this.mobileMenuCloseTimer);
-    }
-
+    this.clearCloseTimer();
     this.mobileMenuCloseTimer = setTimeout(() => {
       this.mobileMenuMounted = false;
       this.mobileMenuCloseTimer = null;
-    }, 300);
-  }
-
-  private setPageScrollLocked(locked: boolean): void {
-    if (typeof document === 'undefined') {
-      return;
-    }
-
-    document.documentElement.classList.toggle('mobile-menu-open', locked);
-    document.body.classList.toggle('mobile-menu-open', locked);
+    }, MOBILE_MENU_TRANSITION_MS);
   }
 
   onWhatsAppClick(event: MouseEvent): void {
@@ -297,10 +282,23 @@ export class NavbarComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.clearCloseTimer();
+    this.setPageScrollLocked(false);
+  }
+
+  private clearCloseTimer(): void {
     if (this.mobileMenuCloseTimer) {
       clearTimeout(this.mobileMenuCloseTimer);
       this.mobileMenuCloseTimer = null;
     }
-    this.setPageScrollLocked(false);
+  }
+
+  private setPageScrollLocked(locked: boolean): void {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    document.documentElement.classList.toggle('mobile-menu-open', locked);
+    document.body.classList.toggle('mobile-menu-open', locked);
   }
 }
