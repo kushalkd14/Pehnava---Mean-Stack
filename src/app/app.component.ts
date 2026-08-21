@@ -55,99 +55,103 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   isWhatsAppModalOpen = false;
   whatsAppCustomMessage = '';
-  selectedEnquiryLook: Look | null = null;
   activeLookModal: Look | null = null;
   selectedCategoryFilter = 'all';
 
   ngOnInit(): void {
-    try {
-      this.catalog.store().subscribe({
-        next: (s) => (this.store = s),
-        error: (err) => console.warn('Store fetch error, fallback active:', err),
-      });
-      this.catalog.looks().subscribe({
-        next: (l) => (this.looks = l),
-        error: (err) => console.warn('Looks fetch error, fallback active:', err),
-      });
-      this.catalog.reviews().subscribe({
-        next: (r) => (this.reviews = r),
-        error: (err) => console.warn('Reviews fetch error, fallback active:', err),
-      });
-      this.catalog.instagram().subscribe({
-        next: (i) => (this.instagramPosts = i),
-        error: (err) => console.warn('Instagram fetch error, fallback active:', err),
-      });
-      this.catalog.whyPehnava().subscribe({
-        next: (w) => (this.whyPehnavaItems = w),
-        error: (err) => console.warn('WhyPehnava fetch error, fallback active:', err),
-      });
-    } catch (err) {
-      console.warn('Initialization error caught:', err);
-    }
+    this.loadCatalog();
   }
 
   ngAfterViewInit(): void {
     this.initScrollReveal();
   }
 
+  private loadCatalog(): void {
+    this.catalog.store().subscribe({
+      next: (store) => (this.store = store),
+      error: () => undefined,
+    });
+
+    this.catalog.looks().subscribe({
+      next: (looks) => (this.looks = looks),
+      error: () => undefined,
+    });
+
+    this.catalog.reviews().subscribe({
+      next: (reviews) => (this.reviews = reviews),
+      error: () => undefined,
+    });
+
+    this.catalog.instagram().subscribe({
+      next: (posts) => (this.instagramPosts = posts),
+      error: () => undefined,
+    });
+
+    this.catalog.whyPehnava().subscribe({
+      next: (items) => (this.whyPehnavaItems = items),
+      error: () => undefined,
+    });
+  }
+
   private initScrollReveal(): void {
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
-
-    try {
-      const prefersReducedMotion =
-        typeof window.matchMedia === 'function' &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
-        document.querySelectorAll('[data-reveal]').forEach((el) => {
-          el.classList.add('revealed');
-        });
-        return;
-      }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '0px 0px -40px 0px',
-        }
-      );
-
-      document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
-    } catch (e) {
-      console.warn('Observer initialization error, revealing elements:', e);
-      document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('revealed'));
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
     }
+
+    const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal]');
+    if (!revealElements.length) {
+      return;
+    }
+
+    const prefersReducedMotion =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
+      revealElements.forEach((element) => element.classList.add('revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add('revealed');
+          currentObserver.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
   }
 
   handleOpenWhatsApp(customMessage?: string, look?: Look): void {
     this.whatsAppCustomMessage =
       customMessage || (look ? look.enquiryMessage : WHATSAPP_MESSAGES.general);
-    this.selectedEnquiryLook = look || null;
     this.isWhatsAppModalOpen = true;
   }
 
   handleSelectCategoryFromEdits(categoryId: string): void {
-    let target = 'all';
-    if (categoryId === 'women') target = 'women';
-    else if (categoryId === 'men') target = 'men';
-    else if (categoryId === 'ethnic-wear') target = 'ethnic';
-    else if (categoryId === 'occasion-wear') target = 'occasion';
-    else if (categoryId === 'new-arrivals') target = 'new-arrivals';
+    const categoryMap: Record<string, string> = {
+      women: 'women',
+      men: 'men',
+      'ethnic-wear': 'ethnic',
+      'occasion-wear': 'occasion',
+      'new-arrivals': 'new-arrivals',
+    };
 
-    this.selectedCategoryFilter = target;
+    this.selectedCategoryFilter = categoryMap[categoryId] ?? 'all';
   }
 
   handleCloseWhatsAppModal(): void {
     this.isWhatsAppModalOpen = false;
-    this.selectedEnquiryLook = null;
   }
 
   handleCloseLookModal(): void {
