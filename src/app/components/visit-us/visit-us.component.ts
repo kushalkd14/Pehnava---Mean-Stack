@@ -90,7 +90,7 @@ import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config
                 aria-label="Enquire about store visit on WhatsApp"
                 class="btn-pehnava-secondary inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide cursor-pointer active:scale-98"
               >
-                <app-icon name="message-circle" [size]="17" customClass="text-[#25D366]"></app-icon>
+                <app-icon name="whatsapp" [size]="17" customClass="text-[#25D366] shrink-0"></app-icon>
                 <span>Ask on WhatsApp</span>
               </a>
             </div>
@@ -122,8 +122,8 @@ import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config
                 <div class="flex items-start gap-3">
                   <app-icon name="check-circle-2" [size]="18" customClass="text-[#155E5B] shrink-0 mt-0.5"></app-icon>
                   <div>
-                    <h4 class="text-sm font-serif font-semibold text-[#155E5B]">Her & His Curated Sections</h4>
-                    <p class="text-sm text-[#71847B] font-normal leading-relaxed">Distinct collections of daily coordinates, festive drapes, and men's classics.</p>
+                    <h4 class="text-sm font-serif font-semibold text-[#155E5B]">Curated Women's Fashion Racks</h4>
+                    <p class="text-sm text-[#71847B] font-normal leading-relaxed">Distinct collections of daily Kurtis, Cotton suits, Co-Ord sets, Utility cargos, and festive ensembles.</p>
                   </div>
                 </div>
 

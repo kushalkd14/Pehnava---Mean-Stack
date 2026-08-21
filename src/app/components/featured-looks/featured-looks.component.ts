@@ -17,18 +17,18 @@ import { Look } from '../../models/catalog.models';
             <span>The Boutique Lookbook</span>
           </div>
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-[#155E5B] tracking-tight mb-4">
-            Featured Looks & In-Store Styles
+            Featured Women’s Outfits & Styles
           </h2>
           <p class="text-sm sm:text-base text-[#71847B] font-sans font-normal max-w-2xl mx-auto leading-relaxed">
-            A visual curation of silhouettes, soft fabrics, and vibrant textures available at Pahnave Wale Bhaiya in Ajmer.
+            A visual curation of women's silhouettes, soft fabrics, and vibrant textures available at Pehnava RJ01 in Ajmer.
             Tap any look to inspect details or connect directly on WhatsApp.
           </p>
         </div>
 
-        <!-- Filter Pills with Colorful Micro Accents -->
+        <!-- Filter Pills -->
         <div class="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-14 no-scrollbar" data-reveal data-reveal-delay="100">
           @for (tab of filterTabs; track tab.id) {
-            @let isActive = selectedCategoryFilter === tab.id || (tab.id === 'ethnic' && selectedCategoryFilter === 'ethnic-wear') || (tab.id === 'occasion' && selectedCategoryFilter === 'occasion-wear');
+            @let isActive = selectedCategoryFilter === tab.id;
             <button
               [id]="'filter-tab-' + tab.id"
               (click)="onSelectCategoryFilter(tab.id)"
@@ -47,7 +47,7 @@ import { Look } from '../../models/catalog.models';
           }
         </div>
 
-        <!-- Looks Grid with Colorful Cards & Store Details -->
+        <!-- Looks Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           @for (look of filteredLooks; track look.id; let idx = $index) {
             <div
@@ -56,9 +56,9 @@ import { Look } from '../../models/catalog.models';
               data-reveal
               [attr.data-reveal-delay]="(idx % 4) * 100"
             >
-              <!-- Image Container with Hover Quick View -->
+              <!-- Image Container -->
               <div
-                class="relative h-80 sm:h-96 w-full bg-[#F0F7F3] overflow-hidden cursor-pointer"
+                class="relative aspect-[4/3] w-full bg-[#F0F7F3] overflow-hidden cursor-pointer"
                 (click)="openLookModal.emit(look)"
               >
                 <img
@@ -73,7 +73,7 @@ import { Look } from '../../models/catalog.models';
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
 
-                <!-- Top Left: Category Chip with Soft Boutique Color -->
+                <!-- Category Chip -->
                 <div class="absolute top-3.5 left-3.5 flex flex-col gap-1.5">
                   <span
                     class="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-xs border backdrop-blur-sm"
@@ -98,7 +98,7 @@ import { Look } from '../../models/catalog.models';
               </div>
 
               <!-- Look Info & Actions -->
-              <div class="p-5 flex flex-col justify-between flex-1 bg-white border-t border-[#D5D8D3]/60">
+              <div class="p-4 sm:p-4.5 flex flex-col justify-between flex-1 bg-white border-t border-[#D5D8D3]/60 space-y-3">
                 <div class="mb-4">
                   @if (look.fabricNote) {
                     <span class="text-[11px] text-[#71847B] font-medium block mb-1">
@@ -116,7 +116,7 @@ import { Look } from '../../models/catalog.models';
                   </p>
                 </div>
 
-                <!-- WhatsApp Action Button with Gold Hover Glow -->
+                <!-- WhatsApp Action Button -->
                 <button
                   [id]="'enquire-look-' + look.id"
                   (click)="enquireWhatsApp.emit(look)"
@@ -130,11 +130,11 @@ import { Look } from '../../models/catalog.models';
           }
         </div>
 
-        <!-- Footnote on In-Store Experience -->
+        <!-- Footnote -->
         <div class="mt-14 text-center text-xs text-[#71847B] flex items-center justify-center gap-2 max-w-2xl mx-auto" data-reveal>
           <app-icon name="store" [size]="14" customClass="text-[#B8875A] shrink-0"></app-icon>
           <p>
-            Visit Pahnave Wale Bhaiya on Mayo Link Road, Ajmer to experience fabrics, trial custom sizes, and explore matching coordinated accessories.
+            Visit Pehnava RJ01 on Mayo Link Road, Ajmer to experience fabrics, trial custom sizes, and explore matching coordinated accessories.
           </p>
         </div>
       </div>
@@ -150,18 +150,17 @@ export class FeaturedLooksComponent {
 
   readonly filterTabs = [
     { id: 'all', label: 'All Looks', accent: 'teal' },
-    { id: 'women', label: 'Women', accent: 'rose' },
-    { id: 'men', label: 'Men', accent: 'wood' },
-    { id: 'ethnic', label: 'Ethnic Wear', accent: 'gold' },
-    { id: 'occasion', label: 'Occasion Wear', accent: 'terracotta' },
-    { id: 'new-arrivals', label: 'New Arrivals', accent: 'mint' },
+    { id: 'premium-kurtis', label: 'Premium Kurtis', accent: 'mint' },
+    { id: 'cotton-collection', label: 'Cotton Collection', accent: 'emerald' },
+    { id: 'heavy-fancy-suits', label: 'Heavy Fancy Suits', accent: 'rose' },
+    { id: 'coord-sets', label: 'Co-Ord Sets', accent: 'terracotta' },
+    { id: 'cargo-pants', label: 'Cargo Pants', accent: 'wood' },
+    { id: 'oversized-tshirts', label: 'Oversized Tees', accent: 'gold' },
   ];
 
   get filteredLooks(): Look[] {
     return this.looks.filter((look) => {
       if (this.selectedCategoryFilter === 'all' || !this.selectedCategoryFilter) return true;
-      if (this.selectedCategoryFilter === 'ethnic-wear') return look.categorySlug === 'ethnic';
-      if (this.selectedCategoryFilter === 'occasion-wear') return look.categorySlug === 'occasion';
       return look.categorySlug === this.selectedCategoryFilter;
     });
   }

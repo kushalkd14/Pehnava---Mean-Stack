@@ -1,92 +1,20 @@
-<div class="min-h-screen bg-[#FAF8F3] text-[#26332F] flex flex-col selection:bg-[#AFCFC0] selection:text-[#0E4543]">
-  <!-- Sticky Header Navigation -->
-  <app-navbar
-    [store]="store"
-    (openWhatsApp)="handleOpenWhatsApp()"
-  ></app-navbar>
+<!-- Non-blocking Premium Splash Screen -->
+<app-splash-screen></app-splash-screen>
 
-  <!-- Main Content Sections -->
-  <main class="flex-1">
-    <!-- Editorial Hero with Physical Store Palette -->
-    <app-hero
-      [store]="store"
-      (openWhatsApp)="handleOpenWhatsApp()"
-    ></app-hero>
+<!-- Sticky Navigation Header -->
+<app-navbar (openWhatsAppModal)="handleOpenWhatsApp()"></app-navbar>
 
-    <!-- The Pehnava Edit Introduction -->
-    <app-intro-section></app-intro-section>
+<!-- Main Page Router Content -->
+<router-outlet></router-outlet>
 
-    <!-- Major Editorial Section: Women & Men Edits -->
-    <app-editorial-edits
-      (selectCategory)="handleSelectCategoryFromEdits($event)"
-    ></app-editorial-edits>
+<!-- Footer -->
+<app-footer (openWhatsAppModal)="handleOpenWhatsApp()"></app-footer>
 
-    <!-- Featured Looks / Lookbook Gallery -->
-    <app-featured-looks
-      [looks]="looks"
-      [selectedCategoryFilter]="selectedCategoryFilter"
-      (selectCategoryFilter)="selectedCategoryFilter = $event"
-      (openLookModal)="activeLookModal = $event"
-      (enquireWhatsApp)="handleOpenWhatsApp($event.enquiryMessage, $event)"
-    ></app-featured-looks>
+<!-- Floating WhatsApp Button -->
+<app-floating-whatsapp (openWhatsAppModal)="handleOpenWhatsApp()"></app-floating-whatsapp>
 
-    <!-- WhatsApp Experience Section (Conversation Showcase) -->
-    <app-whatsapp-section
-      [store]="store"
-      (openWhatsApp)="handleOpenWhatsApp()"
-    ></app-whatsapp-section>
-
-    <!-- Why Pehnava Value Cards -->
-    <app-why-pehnava
-      [items]="whyPehnavaItems"
-    ></app-why-pehnava>
-
-    <!-- Permanent Editorial Customer Reviews Infinite Marquee -->
-    <app-customer-reviews
-      [reviews]="reviews"
-    ></app-customer-reviews>
-
-    <!-- Instagram Grid Showcase -->
-    <app-instagram-section
-      [posts]="instagramPosts"
-      [store]="store"
-    ></app-instagram-section>
-
-    <!-- Authentic About Section -->
-    <app-about-section
-      [store]="store"
-    ></app-about-section>
-
-    <!-- Visit Us / Store Location Details -->
-    <app-visit-us
-      [store]="store"
-      (openWhatsApp)="handleOpenWhatsApp()"
-    ></app-visit-us>
-  </main>
-
-  <!-- Minimalist Editorial Footer -->
-  <app-footer
-    [store]="store"
-    (openWhatsApp)="handleOpenWhatsApp()"
-  ></app-footer>
-
-  <!-- Floating Action Button for WhatsApp -->
-  <app-floating-whatsapp
-    (openWhatsApp)="handleOpenWhatsApp()"
-  ></app-floating-whatsapp>
-
-  <!-- WhatsApp Enquiry Modal -->
-  <app-whatsapp-modal
-    [isOpen]="isWhatsAppModalOpen"
-    [initialMessage]="whatsAppCustomMessage"
-    [store]="store"
-    (close)="handleCloseWhatsAppModal()"
-  ></app-whatsapp-modal>
-
-  <!-- Look Detail Quick View Modal -->
-  <app-look-modal
-    [look]="activeLookModal"
-    (close)="handleCloseLookModal()"
-    (enquire)="handleEnquireFromLookModal($event)"
-  ></app-look-modal>
-</div>
+<!-- WhatsApp Modal -->
+<app-whatsapp-modal
+  [isOpen]="isWhatsAppModalOpen"
+  (close)="handleCloseWhatsApp()"
+></app-whatsapp-modal>

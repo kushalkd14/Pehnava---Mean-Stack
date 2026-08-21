@@ -1,53 +1,62 @@
 {
-  "hash": "e8b2be46",
-  "configHash": "944df17a",
-  "lockfileHash": "fdb88e3b",
-  "browserHash": "5321f998",
+  "hash": "23960164",
+  "configHash": "a26bd713",
+  "lockfileHash": "dd77b76a",
+  "browserHash": "b3a24776",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "cbce2490",
+      "fileHash": "3ae0079d",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "1c1c6ac1",
+      "fileHash": "4e11908f",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "98a75eb3",
+      "fileHash": "38ae16fd",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "7d2d3a88",
+      "fileHash": "700da3e8",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "10e2ce66",
+      "fileHash": "6029134e",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "bc8b3864",
+      "fileHash": "1cd7a26c",
       "needsInterop": false
     },
     "zone.js": {
       "src": "../../../../../../node_modules/zone.js/fesm2015/zone.js",
       "file": "zone__js.js",
-      "fileHash": "3b23e42a",
+      "fileHash": "b069f4b1",
       "needsInterop": true
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "90a5be8b",
+      "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-IFAOZROM": {
+      "file": "chunk-IFAOZROM.js"
+    },
     "chunk-LDVWFS4Z": {
       "file": "chunk-LDVWFS4Z.js"
     },

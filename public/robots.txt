@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pehnava---mean-stack.sswaggyiirush.workers.dev/sitemap.xml

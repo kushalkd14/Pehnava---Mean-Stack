@@ -34,7 +34,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
         <div class="w-16 h-0.5 bg-[#B89452] mx-auto rounded-full mb-3.5 opacity-80"></div>
 
         <p class="text-sm md:text-base text-[#71847B] max-w-lg mx-auto font-sans leading-relaxed">
-          A few words from the people who love Pahnave Wale Bhaiya.
+          A few words from the people who love Pehnava.
         </p>
       </div>
 
@@ -204,7 +204,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
             [href]="getShareExperienceWhatsAppUrl()"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Share your experience with Pahnave Wale Bhaiya on WhatsApp"
+            aria-label="Share your experience with Pehnava on WhatsApp"
             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#FAF8F3] hover:bg-[#155E5B] text-[#155E5B] hover:text-[#FAF8F3] border border-[#AFCFC0] text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer shadow-2xs hover:shadow-md"
           >
             <app-icon name="message-circle" [size]="15" customClass="text-[#25D366]"></app-icon>

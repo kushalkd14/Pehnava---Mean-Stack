@@ -5,18 +5,18 @@ export const WHATSAPP_NUMBER = '918005785709';
 export const WHATSAPP_DISPLAY_NUMBER = '+91 80057 85709';
 
 export const WHATSAPP_MESSAGES = {
-  general: 'Hello Pahnave Wale Bhaiya, I would like to know more about your collection.',
-  product: (productName: string) => `Hello Pahnave Wale Bhaiya, I am interested in ${productName}. Could you please share more details?`,
-  storeVisit: 'Hello Pahnave Wale Bhaiya, I would like to know more about visiting your store.',
-  availability: 'Hello Pahnave Wale Bhaiya, I would like to check the availability of a product.',
-  shareExperience: 'Hello Pahnave Wale Bhaiya, I would like to share my experience with your store.',
+  general: 'Hello Pehnava, I would like to know more about your collection.',
+  product: (productName: string) => `Hello Pehnava, I am interested in ${productName}. Could you please share more details?`,
+  storeVisit: 'Hello Pehnava, I would like to know more about visiting your store.',
+  availability: 'Hello Pehnava, I would like to check the availability of a product.',
+  shareExperience: 'Hello Pehnava, I would like to share my experience with your store.',
 };
 
 export const BUSINESS_CONFIG: BusinessConfig = {
-  name: 'Pahnave Wale Bhaiya',
+  name: 'Pehnava',
   tagline: 'Style That Feels Like You.',
   headline: 'Style That Feels Like You.',
-  subheadline: 'Discover contemporary fashion for every occasion at Pahnave Wale Bhaiya, Ajmer.',
+  subheadline: 'Discover contemporary fashion for every occasion at Pehnava, Ajmer.',
   city: 'Ajmer',
   state: 'Rajasthan',
   country: 'India',

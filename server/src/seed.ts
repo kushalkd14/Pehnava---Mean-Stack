@@ -7,14 +7,14 @@ import { Store } from './models/store.model.js';
 const photo = (id: string) => `https://images.unsplash.com/photo-${id}?q=75&w=750&auto=format&fit=crop`;
 
 const rows = [
-  ['look-1', 'Everyday Edit', 'Daily Contemporary', 'women', '1610030469983-98e550d6193c', 'A relaxed-fit ensemble blending understated comfort with refined modern aesthetics.', 'Breathable Modal & Linen Blend'],
-  ['look-2', 'Festive Edit', 'Festive Occasion', 'occasion', '1583391733956-3750e0ff4e8b', 'Vibrant festive warmth with expressive motifs for gatherings and ceremonies.', 'Pure Chanderi with Zari Detailing'],
-  ['look-3', 'Contemporary Classic', 'Modern Fusion', 'women', '1572804013309-59a88b7e92f1', 'Clean contemporary lines with traditional Indian sensibilities.', 'Soft Silk Crepe & Organza'],
-  ['look-4', 'Statement Look', 'Occasion Highlight', 'occasion', '1566737236500-c8ac43014a67', 'A standout silhouette for memorable evenings and wedding receptions.', 'Georgette with Delicate Gold Embroidery'],
-  ['look-5', 'Modern Ethnic', 'Heritage Craft', 'ethnic', '1617627143750-d86bc21e42bb', 'Timeless Rajasthani aesthetics refined for a contemporary look.', 'Hand-block Inspired Cotton Silk'],
-  ['look-6', 'Occasion Edit', 'Celebration Wear', 'occasion', '1518049362265-d5b2a6467637', 'Soft pastel hues and tasteful accents for festive occasions.', 'Fine Tussar Silk with Resham Embroidery'],
-  ['look-7', 'Pastel Grace', 'Day Occasion', 'new-arrivals', '1529139574466-a303027c1d8b', 'Soft hues for daytime festivities and family gatherings.', 'Pastel Chiffon with Mirror Work Trim'],
-  ['look-8', 'Celebration Ensemble', 'Men & Occasion', 'men', '1507679799987-c73779587ccf', 'Sharp menswear tailoring with clean collar lines and festive styling.', 'Raw Silk & Structured Jacquard'],
+  ['look-1', 'Everyday Kurti Edit', 'Premium Kurtis', 'premium-kurtis', '1610030469983-98e550d6193c', 'A relaxed-fit ensemble blending understated comfort with refined modern aesthetics.', 'Breathable Modal & Cotton Blend'],
+  ['look-2', 'Festive Chanderi Suit', 'Heavy Fancy Suits', 'heavy-fancy-suits', '1583391733956-3750e0ff4e8b', 'Vibrant festive warmth with expressive motifs for gatherings and ceremonies.', 'Pure Chanderi with Zari Detailing'],
+  ['look-3', 'Contemporary Fusion Set', 'Modern Grace', 'modern-grace', '1572804013309-59a88b7e92f1', 'Clean contemporary lines with traditional Indian sensibilities.', 'Soft Silk Crepe & Organza'],
+  ['look-4', 'Statement Co-Ord Set', 'Co-Ord Sets', 'coord-sets', '1566737236500-c8ac43014a67', 'A standout silhouette for memorable evenings and boutique outings.', 'Georgette with Delicate Gold Embroidery'],
+  ['look-5', 'Modern Cotton Suit', 'Cotton Collection', 'cotton-collection', '1617627143750-d86bc21e42bb', 'Timeless Rajasthani aesthetics refined for daily comfort.', 'Hand-block Inspired Pure Cotton'],
+  ['look-6', 'Festive Anarkali Suit', 'Festive Collection', 'festive-collection', '1518049362265-d5b2a6467637', 'Soft pastel hues and tasteful accents for festive occasions.', 'Fine Tussar Silk with Resham Embroidery'],
+  ['look-7', 'Short Kurti & Cargo Pants', 'Cargo Pants', 'cargo-pants', '1529139574466-a303027c1d8b', 'Trendy urban utility cargo pants paired with chic short kurtis.', 'Durable Cotton Twill'],
+  ['look-8', 'Oversized Printed Tee', 'Oversized T-Shirts', 'oversized-tshirts', '1507679799987-c73779587ccf', 'Relaxed oversized graphic tees for modern street style.', '100% Premium Heavyweight Cotton'],
 ] as const;
 
 const looks = rows.map(([id, title, category, categorySlug, imageId, description, fabricNote]) => ({
@@ -25,16 +25,19 @@ const looks = rows.map(([id, title, category, categorySlug, imageId, description
   image: photo(imageId),
   description,
   details: ['Curated boutique styling', 'Comfortable tailored silhouette', 'Available to explore in store'],
-  enquiryMessage: `Hello Pahnave Wale Bhaiya, I am interested in ${title}. Could you please share more details?`,
+  enquiryMessage: `Hello Pehnava, I am interested in ${title}. Could you please share more details?`,
   fabricNote,
 }));
 
 const collections = [
-  ['women', 'Women', 'Contemporary Silhouettes & Graceful Drapes', '1610030469983-98e550d6193c'],
-  ['men', 'Men', 'Refined Classics & Structured Fits', '1507679799987-c73779587ccf'],
-  ['ethnic-wear', 'Ethnic Wear', 'Timeless Heritage & Festive Silhouettes', '1583391733956-3750e0ff4e8b'],
-  ['occasion-wear', 'Occasion Wear', 'Celebration Ensembles & Festive Glamour', '1566737236500-c8ac43014a67'],
-  ['new-arrivals', 'New Arrivals', 'Fresh In-Store Arrivals this Season', '1515886657613-9f3515b0c78f'],
+  ['premium-kurtis', 'Premium Kurtis', 'Hand-Crafted Designer & Anarkali Kurtis', '1610030469983-98e550d6193c'],
+  ['short-kurtis', 'Short Kurtis', 'Trendy & Breathable Everyday Kurtis', '1529139574466-a303027c1d8b'],
+  ['cotton-collection', 'Cotton Collection', 'Pure Cotton Everyday Sets & Suits', '1617627143750-d86bc21e42bb'],
+  ['heavy-fancy-suits', 'Heavy Fancy Suits', 'Regal Zari & Embroidery Festive Outfits', '1583391733956-3750e0ff4e8b'],
+  ['coord-sets', 'Co-Ord Sets', 'Modern Matching Ethnic & Fusion Sets', '1566737236500-c8ac43014a67'],
+  ['cargo-pants', 'Cargo Pants', 'Chic & Comfortable Utility Cargo Trousers', '1529139574466-a303027c1d8b'],
+  ['oversized-tshirts', 'Oversized T-Shirts', 'Trendy & Relaxed Streetwear Tees', '1507679799987-c73779587ccf'],
+  ['festive-collection', 'Festive Collection', 'Occasion-Ready Couture & Ceremonial Wear', '1518049362265-d5b2a6467637'],
 ].map(([id, name, subtitle, imageId]) => ({
   id,
   name,
@@ -45,10 +48,10 @@ const collections = [
 }));
 
 const store = {
-  name: 'Pahnave Wale Bhaiya',
+  name: 'Pehnava',
   tagline: 'Style That Feels Like You.',
   headline: 'Style That Feels Like You.',
-  subheadline: 'Discover contemporary fashion for every occasion at Pahnave Wale Bhaiya, Ajmer.',
+  subheadline: 'Discover contemporary fashion for every occasion at Pehnava, Ajmer.',
   fullAddress: 'Front of Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305007, India',
   addressLines: [
     'Front of Holy Family Hospital',
@@ -74,7 +77,7 @@ async function seed() {
     await Promise.all(collections.map((item) => Collection.updateOne({ id: item.id }, item, { upsert: true })));
     await Store.updateOne({}, store, { upsert: true });
 
-    console.info('Successfully seeded store info, 5 collections, and 8 lookbook entries into MongoDB.');
+    console.info('Successfully seeded store info, collections, and lookbook entries into MongoDB.');
     process.exit(0);
   } catch (error) {
     console.error('Failed to seed MongoDB:', error);

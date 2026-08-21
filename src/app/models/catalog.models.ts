@@ -20,6 +20,7 @@ export interface BusinessConfig {
 
 export interface Collection {
   id: string;
+  slug: string;
   name: string;
   subtitle: string;
   description: string;
@@ -27,6 +28,7 @@ export interface Collection {
   tag: string;
   highlightCount?: string;
   accentColor?: string;
+  features?: string[];
 }
 
 export interface Look {
@@ -65,6 +67,8 @@ export interface Review {
   location: string;
   rating: number;
   text: string;
+  purchasedCollection?: string;
+  avatar?: string;
   date?: string;
   cardVariant?: 'ivory' | 'mint' | 'cream' | 'peach' | 'rose' | 'sage';
 }

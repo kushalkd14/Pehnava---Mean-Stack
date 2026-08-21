@@ -19,26 +19,25 @@ import { BUSINESS_CONFIG } from '../../config/business';
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <!-- Left Column: Editorial Imagery with Warm Wood & Gold Framing -->
+          <!-- Left Column: Editorial Imagery -->
           <div class="lg:col-span-5 relative" data-reveal>
             <div class="relative mx-auto max-w-sm lg:max-w-none">
-              <!-- Outer Architectural Warm Wood & Gold Trim Frame -->
+              <!-- Outer Frame -->
               <div class="rounded-[32px] overflow-hidden bg-[#0E4543] border-2 border-[#B89452]/50 shadow-2xl p-2.5 sm:p-3">
                 <div class="rounded-[24px] overflow-hidden aspect-[3/4] bg-[#092B2A]">
                   <img
-                    src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=75&w=750&auto=format&fit=crop"
-                    alt="Pahnave Wale Bhaiya Boutique Aesthetics in Ajmer"
+                    src="assets/store/store-01.webp"
+                    alt="Pehnava Boutique Aesthetics in Ajmer"
                     width="750"
                     height="1000"
                     loading="lazy"
                     decoding="async"
-                    referrerPolicy="no-referrer"
                     class="w-full h-full object-cover img-luxury-hover"
                   />
                 </div>
               </div>
 
-              <!-- Offset Accent Gold Wire Frame -->
+              <!-- Offset Accent Frame -->
               <div class="absolute -bottom-4 -left-4 w-full h-full rounded-[32px] border-2 border-[#B8875A]/40 -z-10 hidden sm:block pointer-events-none"></div>
 
               <!-- Floating Quote Stamp -->
@@ -51,7 +50,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
                   "Thoughtful clothing that balances Indian heritage with everyday modernity."
                 </p>
                 <span class="text-[10px] uppercase tracking-wider text-[#B8875A] font-bold block">
-                  — {{ store?.name || 'Pahnave Wale Bhaiya' }}, Ajmer
+                  — {{ store?.name || 'Pehnava' }}, Ajmer
                 </span>
               </div>
             </div>
@@ -65,7 +64,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
             </div>
 
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#FAF8F3] tracking-tight mb-6">
-              Pahnave Wale <span class="text-[#D4B270] italic">Bhaiya</span>
+              Pehnava <span class="text-[#D4B270] italic">RJ01</span>
             </h2>
 
             <blockquote class="text-xl sm:text-2xl font-serif italic text-[#DDEFE6] border-l-2 border-[#B89452] pl-5 mb-8 leading-snug">
@@ -74,7 +73,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
 
             <div class="space-y-4 text-sm sm:text-base text-[#DDEFE6]/90 leading-relaxed font-sans font-normal mb-8">
               <p>
-                Located in the heart of Ajmer on Mayo Link Road, <strong class="font-semibold text-white">{{ store?.name || 'Pahnave Wale Bhaiya' }}</strong> is a fashion boutique curated for those who appreciate thoughtful styling, timeless ethnic grace, and effortless contemporary silhouettes.
+                Located in the heart of Ajmer on Mayo Link Road, <strong class="font-semibold text-white">{{ store?.name || 'Pehnava' }}</strong> is a fashion boutique curated for those who appreciate thoughtful styling, timeless ethnic grace, and effortless contemporary silhouettes.
               </p>
               <p>
                 Inside our boutique, designed with soft mint green walls, warm natural wood, deep teal accents and terrazzo flooring, we strive to make shopping a personal and joyful experience.
@@ -84,7 +83,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
               </p>
             </div>
 
-            <!-- Store Location Pill with Gold Trim -->
+            <!-- Store Location Pill -->
             <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-[#0E4543]/80 border border-[#B89452]/40 w-full max-w-lg shadow-sm">
               <div class="w-11 h-11 rounded-xl bg-[#155E5B] border border-[#B89452]/40 flex items-center justify-center text-[#D4B270] shrink-0 shadow-2xs mt-0.5">
                 <app-icon name="map-pin" [size]="20"></app-icon>

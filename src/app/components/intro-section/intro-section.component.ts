@@ -16,7 +16,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
         <!-- Small Editorial Label with Gold & Deep Teal Styling -->
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F3] text-[#155E5B] text-xs font-bold uppercase tracking-[0.25em] mb-5 border border-[#B89452]/40 shadow-xs">
           <app-icon name="sparkles" [size]="13" customClass="text-[#B89452]"></app-icon>
-          <span>The Pahnave Wale Bhaiya Edit</span>
+          <span>The Pehnava Edit</span>
         </div>
 
         <!-- Main Headline -->

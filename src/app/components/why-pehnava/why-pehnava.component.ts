@@ -14,11 +14,11 @@ import { WhyPehnavaItem } from '../../models/catalog.models';
         <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
           <div class="inline-flex max-w-full items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F3] text-[#155E5B] text-[11px] font-bold uppercase tracking-[0.1em] leading-snug mb-4 border border-[#B89452]/40 shadow-xs">
             <app-icon name="sparkles" [size]="13" customClass="text-[#B89452]"></app-icon>
-            <span>The Pahnave Wale Bhaiya Experience</span>
+            <span>The Pehnava Experience</span>
           </div>
 
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-[#155E5B] tracking-tight mb-4">
-            Why Shop with Pahnave Wale Bhaiya
+            Why Shop with Pehnava
           </h2>
 
           <p class="text-sm sm:text-base text-[#71847B] font-sans font-normal max-w-2xl mx-auto leading-relaxed">
@@ -35,7 +35,7 @@ import { WhyPehnavaItem } from '../../models/catalog.models';
               [attr.data-reveal-delay]="index * 100"
             >
               <div>
-                <!-- Icon Container with Mint & Gold Detailing -->
+                <!-- Icon Container -->
                 <div class="w-13 h-13 rounded-2xl bg-[#DDEFE6] flex items-center justify-center mb-6 border border-[#AFCFC0] group-hover:scale-105 group-hover:bg-[#AFCFC0]/60 transition-all duration-200 shadow-2xs">
                   @switch (index % 4) {
                     @case (0) {

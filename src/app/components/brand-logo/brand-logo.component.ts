@@ -7,32 +7,47 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     @if (variant === 'footer' || variant === 'light') {
-      <div class="inline-flex items-baseline gap-1.5 select-none" [ngClass]="customClass">
-        <span class="font-serif font-medium text-2xl sm:text-3xl text-[#FAF8F3] tracking-tight">
-          Pahnave Wale
-        </span>
-        <span class="font-serif italic font-normal text-2xl sm:text-3xl text-[#D4B270] tracking-tight">
-          Bhaiya
-        </span>
+      <div class="inline-flex items-center gap-2.5 select-none" [ngClass]="customClass">
+        <div class="w-8 h-8 rounded-full bg-[#FAF8F3] p-0.5 shadow-sm flex items-center justify-center shrink-0">
+          <img src="pehnava-logo.webp" alt="Pehnava Logo" class="w-full h-full object-contain rounded-full" />
+        </div>
+        <div class="inline-flex items-baseline gap-1">
+          <span class="font-bold text-[#FAF8F3] text-2xl sm:text-3xl tracking-tight">
+            PEHNAVA
+          </span>
+          <span class="font-bold text-[#D4B270] text-2xl sm:text-3xl tracking-tight">
+            RJ01
+          </span>
+        </div>
       </div>
     } @else if (variant === 'large') {
-      <div class="inline-flex items-baseline gap-2 select-none" [ngClass]="customClass">
-        <span class="font-serif font-medium text-3xl sm:text-4xl text-[#155E5B] tracking-tight">
-          Pahnave Wale
-        </span>
-        <span class="font-serif italic font-normal text-3xl sm:text-4xl text-[#B8875A] tracking-tight">
-          Bhaiya
-        </span>
+      <div class="inline-flex items-center gap-3 select-none" [ngClass]="customClass">
+        <div class="w-12 h-12 rounded-full bg-[#155E5B] p-0.5 shadow-md flex items-center justify-center shrink-0">
+          <img src="pehnava-logo.webp" alt="Pehnava Logo" class="w-full h-full object-contain rounded-full" />
+        </div>
+        <div class="inline-flex items-baseline gap-1.5">
+          <span class="font-bold text-[#155E5B] text-3xl sm:text-4xl tracking-tight">
+            PEHNAVA
+          </span>
+          <span class="font-bold text-[#B8875A] text-3xl sm:text-4xl tracking-tight">
+            RJ01
+          </span>
+        </div>
       </div>
     } @else {
       <!-- Default / Nav variant -->
-      <div class="inline-flex items-baseline gap-1.5 select-none" [ngClass]="customClass">
-        <span class="font-serif font-medium text-xl sm:text-2xl md:text-[25px] text-[#155E5B] tracking-tight leading-none group-hover:text-[#0E4543] transition-colors duration-200">
-          Pahnave Wale
-        </span>
-        <span class="font-serif italic font-normal text-xl sm:text-2xl md:text-[25px] text-[#B8875A] tracking-tight leading-none group-hover:text-[#96673D] transition-colors duration-200">
-          Bhaiya
-        </span>
+      <div class="inline-flex items-center gap-2.5 select-none" [ngClass]="customClass">
+        <div class="w-9 h-9 rounded-full bg-[#155E5B] p-0.5 shadow-sm flex items-center justify-center shrink-0">
+          <img src="pehnava-logo.webp" alt="Pehnava Logo" class="w-full h-full object-contain rounded-full" />
+        </div>
+        <div class="inline-flex items-baseline gap-1">
+          <span class="font-bold text-[#155E5B] text-xl sm:text-2xl md:text-[25px] tracking-tight leading-none group-hover:text-[#0E4543] transition-colors duration-200">
+            PEHNAVA
+          </span>
+          <span class="font-bold text-[#B8875A] text-xl sm:text-2xl md:text-[25px] tracking-tight leading-none group-hover:text-[#96673D] transition-colors duration-200">
+            RJ01
+          </span>
+        </div>
       </div>
     }
   `
