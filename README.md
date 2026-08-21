@@ -8,6 +8,12 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
+## Live Website
+
+**Visit the deployed Pehnava RJ01 website:**
+
+👉 **https://pehnava---mean-stack.sswaggyiirush.workers.dev**
+
 ## Overview
 
 Pehnava RJ01 is a premium, responsive **informational boutique website** designed to present the store's collections, brand story, reviews, Instagram presence, physical store information, and WhatsApp enquiry experience.
@@ -298,6 +304,7 @@ Pehnava---Mean-Stack/
 ├── proxy.conf.json
 ├── tsconfig.json
 ├── tsconfig.app.json
+├── wrangler.jsonc
 ├── .env.example
 └── README.md
 ```
@@ -392,6 +399,33 @@ No commerce-related collections are required for the current release.
 
 ---
 
+## Deployment
+
+The Angular frontend is deployed on **Cloudflare Workers** using Wrangler and the Angular production output.
+
+### Live deployment
+
+**https://pehnava---mean-stack.sswaggyiirush.workers.dev**
+
+### Cloudflare build configuration
+
+```text
+Root directory: /
+Production branch: main
+Build command: npm run build
+Deploy command: npx wrangler deploy
+```
+
+Cloudflare serves the Angular SPA from:
+
+```text
+dist/pehnava-rj01/browser
+```
+
+The existing Express + MongoDB backend remains a separate runtime/service from the Workers frontend deployment.
+
+---
+
 ## Verification & QA
 
 The project has completed a final production-oriented audit.
@@ -471,28 +505,13 @@ Configuration expectations:
 
 ---
 
-## Deployment
-
-The application can be deployed as separate frontend and backend services or through a compatible full-stack hosting setup.
-
-A production deployment should provide:
-
-- Angular static hosting/build output
-- Node.js/Express runtime
-- MongoDB connectivity
-- Correct environment variables
-- Production CORS configuration
-- HTTPS
-
-The current repository is prepared for the informational website phase. Hosting-specific configuration should be added according to the deployment provider selected for the project.
-
----
-
 ## Current Release Status
 
 **Status: ✅ Production-ready for the current informational scope**
 
 The website has completed the MEAN migration and final responsive/stability audit.
+
+> **Live website:** https://pehnava---mean-stack.sswaggyiirush.workers.dev
 
 > **No known blocking issues remain for the current informational website scope.**
 
