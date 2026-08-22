@@ -75,9 +75,9 @@ import { Collection, Look } from '../../models/catalog.models';
           <div class="text-center mt-12 sm:mt-14 px-3 sm:px-0">
             <a
               routerLink="/collections"
-              class="w-full sm:w-auto btn-pehnava-secondary inline-flex items-center justify-center gap-2.5 px-4 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs font-bold uppercase tracking-wider cursor-pointer shadow-sm active:scale-98 text-center whitespace-normal leading-snug"
+              class="w-full sm:w-auto btn-pehnava-secondary inline-flex items-center justify-center gap-2.5 px-4 sm:px-9 py-3.5 sm:py-4 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider cursor-pointer shadow-sm active:scale-98 text-center whitespace-normal leading-snug max-w-full"
             >
-              <span>Explore All 11 Women’s Collections</span>
+              <span class="max-w-full text-center">Explore All 11 Women’s Collections</span>
               <app-icon name="arrow-right" [size]="15" customClass="shrink-0"></app-icon>
             </a>
           </div>
