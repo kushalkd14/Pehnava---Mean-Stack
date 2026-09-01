@@ -19,7 +19,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <!-- Left Column: Editorial Imagery -->
+          <!-- Left Column: Imagery -->
           <div class="lg:col-span-5 relative" data-reveal>
             <div class="relative mx-auto max-w-sm lg:max-w-none">
               <!-- Outer Frame -->
@@ -27,7 +27,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
                 <div class="rounded-[24px] overflow-hidden aspect-[3/4] bg-[#092B2A]">
                   <img
                     src="assets/store/store-01.webp"
-                    alt="Pehnava Boutique Aesthetics in Ajmer"
+                    alt="Pehnava Wale Bhaiya Boutique Store Ajmer"
                     width="750"
                     height="1000"
                     loading="lazy"
@@ -44,13 +44,13 @@ import { BUSINESS_CONFIG } from '../../config/business';
               <div class="absolute -bottom-6 right-4 sm:-right-6 bg-[#FAF8F3] text-[#26332F] p-4 sm:p-5 rounded-2xl border border-[#B89452]/40 shadow-xl max-w-[240px]">
                 <div class="flex items-center gap-1 text-[#B89452] mb-1.5">
                   <app-icon name="sparkles" [size]="13"></app-icon>
-                  <span class="text-[10px] uppercase font-bold tracking-widest">Store Spirit</span>
+                  <span class="text-[10px] uppercase font-bold tracking-widest">Founder Story</span>
                 </div>
                 <p class="font-serif italic text-xs text-[#155E5B] leading-tight mb-2">
-                  "Thoughtful clothing that balances Indian heritage with everyday modernity."
+                  "Pehnava Wale Bhaiya is a journey of struggle, faith and never giving up."
                 </p>
                 <span class="text-[10px] uppercase tracking-wider text-[#B8875A] font-bold block">
-                  — {{ store?.name || 'Pehnava' }}, Ajmer
+                  — Ritik Soni, Founder
                 </span>
               </div>
             </div>
@@ -60,26 +60,23 @@ import { BUSINESS_CONFIG } from '../../config/business';
           <div class="lg:col-span-7 flex flex-col items-start" data-reveal data-reveal-delay="200">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E4543] text-[#D4B270] text-xs font-bold uppercase tracking-[0.25em] mb-4 border border-[#B89452]/40 shadow-xs">
               <app-icon name="sparkles" [size]="13" customClass="text-[#B89452]"></app-icon>
-              <span>Our Philosophy & Store Story</span>
+              <span>Our Story & Mission</span>
             </div>
 
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#FAF8F3] tracking-tight mb-6">
-              Pehnava <span class="text-[#D4B270] italic">RJ01</span>
+              Pehnava <span class="text-[#D4B270] italic">Wale Bhaiya</span>
             </h2>
 
             <blockquote class="text-xl sm:text-2xl font-serif italic text-[#DDEFE6] border-l-2 border-[#B89452] pl-5 mb-8 leading-snug">
-              "Fashion is more than what you wear. It is how you express yourself."
+              "No matter how much life takes away from you, never lose faith in yourself."
             </blockquote>
 
             <div class="space-y-4 text-sm sm:text-base text-[#DDEFE6]/90 leading-relaxed font-sans font-normal mb-8">
               <p>
-                Located in the heart of Ajmer on Mayo Link Road, <strong class="font-semibold text-white">{{ store?.name || 'Pehnava' }}</strong> is a fashion boutique curated for those who appreciate thoughtful styling, timeless ethnic grace, and effortless contemporary silhouettes.
+                Founded by <strong class="font-semibold text-white">Ritik Soni</strong> in Ajmer after years of perseverance and hard work, Pehnava Wale Bhaiya has grown from a humble family saree business into a brand trusted by thousands of customers.
               </p>
               <p>
-                Inside our boutique, designed with soft mint green walls, warm natural wood, deep teal accents and terrazzo flooring, we strive to make shopping a personal and joyful experience.
-              </p>
-              <p>
-                Whether you are selecting a relaxed everyday outfit, an expressive ensemble for festive celebrations, or an occasion-ready statement piece, our collections are chosen with an emphasis on fabric feel, flattering cuts, and versatility.
+                Our mission is simple: to make stylish, high-quality ethnic fashion affordable and accessible to women across India, crafted with honest pricing and customer trust at heart.
               </p>
             </div>
 
@@ -90,7 +87,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
               </div>
               <div class="min-w-0 flex-1">
                 <h4 class="text-xs uppercase tracking-wider font-bold text-[#D4B270]">
-                  Physical Boutique Location
+                  Flagship Store Location
                 </h4>
                 <p class="text-sm text-[#FAF8F3] leading-relaxed font-normal">
                   {{ store?.fullAddress || businessConfig.fullAddress }}
@@ -108,3 +105,4 @@ export class AboutSectionComponent {
 
   readonly businessConfig = BUSINESS_CONFIG;
 }
+
