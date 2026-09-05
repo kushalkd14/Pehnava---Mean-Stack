@@ -4,10 +4,10 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BUSINESS_CONFIG } from '../../config/business';
 
 @Component({
-  selector: 'app-map-section',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-map-section',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section id="visit-store" class="py-16 sm:py-20 bg-[#FAF8F3] relative overflow-hidden">
       <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div class="text-center max-w-2xl mx-auto mb-12">
@@ -15,10 +15,10 @@ import { BUSINESS_CONFIG } from '../../config/business';
             Visit Store Location
           </span>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#155E5B] mt-2 mb-4 font-sans">
-            Experience Pehnava RJ01 Boutique
+            Experience Pehnava Boutique
           </h2>
           <p class="text-sm text-[#71847B] font-normal leading-relaxed">
-            Step inside our physical boutique studio in Ajmer, Rajasthan to discover custom fitting, tactile fabrics, and personalized bridal styling consultations.
+            Step inside our physical boutique studio in Ajmer, Rajasthan to discover custom fitting, tactile fabrics, and personalized styling consultations.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
                   <app-icon name="store" [size]="24"></app-icon>
                 </div>
                 <div>
-                  <h3 class="text-lg font-bold text-[#155E5B]">Pehnava RJ01 Studio</h3>
+                  <h3 class="text-lg font-bold text-[#155E5B]">Pehnava</h3>
                   <p class="text-xs text-[#71847B]">Nagra, Ajmer, Rajasthan</p>
                 </div>
               </div>
@@ -65,7 +65,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
                   <div>
                     <span class="block text-xs font-semibold uppercase tracking-wider text-[#71847B] mb-0.5">Amenities</span>
                     <p class="text-xs text-[#71847B]">
-                      Dedicated Trial Rooms • Customer Parking Available • Personalized Bridal Fitting
+                      Dedicated Trial Rooms • Customer Parking Available • Personalized Fitting
                     </p>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
           <!-- Embedded Responsive Google Map -->
           <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-[#D5D8D3] shadow-sm min-h-[350px] lg:min-h-[450px] relative bg-[#F0F7F3]">
             <iframe
-              title="Pehnava RJ01 Boutique Location Map"
+              title="Pehnava Boutique Location Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.083!2d74.6468114!3d26.4366601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be7e7adb5f177%3A0xcdbb4c103fe8e719!2sPehnava!5e0!3m2!1sen!2sin!4v1725500000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
@@ -106,5 +106,5 @@ import { BUSINESS_CONFIG } from '../../config/business';
   `
 })
 export class MapSectionComponent {
-  readonly businessConfig = BUSINESS_CONFIG;
+    readonly businessConfig = BUSINESS_CONFIG;
 }

@@ -5,10 +5,10 @@ import { Review } from '../../models/catalog.models';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
 
 @Component({
-  selector: 'app-customer-reviews',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-customer-reviews',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section
       id="customer-reviews"
       aria-label="Customer Reviews"
@@ -58,7 +58,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
                         }
                       </div>
                       <span class="text-[11px] font-mono tracking-wider text-[#71847B] uppercase font-medium">
-                        RJ01 Story
+                        Pehnava Story
                       </span>
                     </div>
                     <p class="text-[#26332F] text-[15px] leading-relaxed font-sans font-normal mb-5 italic">
@@ -93,7 +93,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
                         }
                       </div>
                       <span class="text-[11px] font-mono tracking-wider text-[#71847B] uppercase font-medium">
-                        RJ01 Story
+                        Pehnava Story
                       </span>
                     </div>
                     <p class="text-[#26332F] text-[15px] leading-relaxed font-sans font-normal mb-5 italic">
@@ -134,7 +134,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
                         }
                       </div>
                       <span class="text-[11px] font-mono tracking-wider text-[#71847B] uppercase font-medium">
-                        RJ01 Story
+                        Pehnava Story
                       </span>
                     </div>
                     <p class="text-[#26332F] text-[15px] leading-relaxed font-sans font-normal mb-5 italic">
@@ -169,7 +169,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
                         }
                       </div>
                       <span class="text-[11px] font-mono tracking-wider text-[#71847B] uppercase font-medium">
-                        RJ01 Story
+                        Pehnava Story
                       </span>
                     </div>
                     <p class="text-[#26332F] text-[15px] leading-relaxed font-sans font-normal mb-5 italic">
@@ -220,35 +220,35 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
   `
 })
 export class CustomerReviewsComponent {
-  @Input() reviews: Review[] = [];
+    @Input() reviews: Review[] = [];
 
-  get row1Reviews(): Review[] {
-    return this.reviews.slice(0, 7);
-  }
-
-  get row2Reviews(): Review[] {
-    return this.reviews.slice(7);
-  }
-
-  getShareExperienceWhatsAppUrl(): string {
-    return getWhatsAppUrl(WHATSAPP_MESSAGES.shareExperience);
-  }
-
-  getCardVariantClass(variant?: string): string {
-    switch (variant) {
-      case 'mint':
-        return 'card-review-mint shadow-sm hover:border-[#155E5B]/40';
-      case 'cream':
-        return 'card-review-cream shadow-sm hover:border-[#B8875A]/40';
-      case 'peach':
-        return 'card-review-peach shadow-sm hover:border-[#C47B5A]/40';
-      case 'rose':
-        return 'card-review-rose shadow-sm hover:border-[#C98F91]/50';
-      case 'sage':
-        return 'card-review-sage shadow-sm hover:border-[#155E5B]/40';
-      case 'ivory':
-      default:
-        return 'card-review-ivory shadow-sm hover:border-[#B89452]/50';
+    get row1Reviews(): Review[] {
+        return this.reviews.slice(0, 7);
     }
-  }
+
+    get row2Reviews(): Review[] {
+        return this.reviews.slice(7);
+    }
+
+    getShareExperienceWhatsAppUrl(): string {
+        return getWhatsAppUrl(WHATSAPP_MESSAGES.shareExperience);
+    }
+
+    getCardVariantClass(variant?: string): string {
+        switch (variant) {
+            case 'mint':
+                return 'card-review-mint shadow-sm hover:border-[#155E5B]/40';
+            case 'cream':
+                return 'card-review-cream shadow-sm hover:border-[#B8875A]/40';
+            case 'peach':
+                return 'card-review-peach shadow-sm hover:border-[#C47B5A]/40';
+            case 'rose':
+                return 'card-review-rose shadow-sm hover:border-[#C98F91]/50';
+            case 'sage':
+                return 'card-review-sage shadow-sm hover:border-[#155E5B]/40';
+            case 'ivory':
+            default:
+                return 'card-review-ivory shadow-sm hover:border-[#B89452]/50';
+        }
+    }
 }

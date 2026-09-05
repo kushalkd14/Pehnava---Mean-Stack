@@ -2,7 +2,7 @@
 
 ## Goal
 
-Upgrade Pehnava RJ01 into a premium informative boutique website.
+Upgrade Pehnava into a premium informative boutique website.
 
 ## Never Change
 

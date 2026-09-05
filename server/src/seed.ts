@@ -52,18 +52,18 @@ const store = {
     tagline: 'Style That Feels Like You.',
     headline: 'Style That Feels Like You.',
     subheadline: 'Discover contemporary fashion for every occasion at Pehnava, Ajmer.',
-    fullAddress: 'Front Of Holy Family Hospital, Mayo Link Rd, near 9no. Petrol Pump, Nagra, Ajmer, Rajasthan 305007',
+    fullAddress: 'Front Of Holy Family Hospital, Mayo Link Rd, near 9no. Petrol Pump, Nagra, Ajmer, Rajasthan 305001',
     addressLines: [
         'Front Of Holy Family Hospital',
         'Mayo Link Rd, near 9no. Petrol Pump',
-        'Nagra, Ajmer, Rajasthan 305007',
+        'Nagra, Ajmer, Rajasthan 305001',
     ],
     googleMapsUrl: 'https://maps.app.goo.gl/MBiSXGiSDfaGrEqq7',
     instagramUrl: 'https://www.instagram.com/pehnavarj01/',
     instagramHandle: '@pehnavarj01',
     whatsappNumber: '918005785709',
     whatsappDisplayNumber: '+91 80057 85709',
-    storeTimings: '11:00 AM – 9:00 PM',
+    storeTimings: '10:00 AM – 9:00 PM',
     workingDays: 'Open All 7 Days',
 };
 

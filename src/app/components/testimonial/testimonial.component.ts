@@ -6,10 +6,10 @@ import { REVIEWS_DATA } from '../../data/reviews';
 import { WhatsAppService } from '../../services/whatsapp.service';
 
 @Component({
-  selector: 'app-testimonial',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-testimonial',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section class="testimonial-marquee py-16 sm:py-24 bg-[#F0F7F3] relative overflow-hidden">
       <!-- Section Header -->
       <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 text-center max-w-3xl mb-12 sm:mb-16">
@@ -19,11 +19,11 @@ import { WhatsAppService } from '../../services/whatsapp.service';
         </div>
 
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-[#155E5B] tracking-tight mb-4">
-          Loved By Our Brides & Clients
+          Loved By Our Clients
         </h2>
 
         <p class="text-xs sm:text-base text-[#71847B] font-sans leading-relaxed max-w-xl mx-auto">
-          Real feedback from women who chose Pehnava for their wedding functions, festive occasions, and boutique shopping in Ajmer.
+          Real feedback from women who chose Pehnava for their festive occasions, party wear, and boutique shopping in Ajmer.
         </p>
       </div>
 
@@ -101,13 +101,13 @@ import { WhatsAppService } from '../../services/whatsapp.service';
   `
 })
 export class TestimonialComponent {
-  @Input() reviews: Review[] = REVIEWS_DATA;
+    @Input() reviews: Review[] = REVIEWS_DATA;
 
-  readonly whatsAppService = inject(WhatsAppService);
+    readonly whatsAppService = inject(WhatsAppService);
 
-  // Duplicate array so second half is an exact duplicate of first half for seamless loop
-  get displayReviews(): Review[] {
-    const list = this.reviews && this.reviews.length > 0 ? this.reviews : REVIEWS_DATA;
-    return [...list, ...list];
-  }
+    // Duplicate array so second half is an exact duplicate of first half for seamless loop
+    get displayReviews(): Review[] {
+        const list = this.reviews && this.reviews.length > 0 ? this.reviews : REVIEWS_DATA;
+        return [...list, ...list];
+    }
 }

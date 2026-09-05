@@ -72,7 +72,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
                 <div class="flex items-center gap-2 mb-1">
                   <span class="w-1.5 h-1.5 rounded-full bg-[#D4B270]"></span>
                   <span class="text-[11px] uppercase tracking-[0.25em] text-[#DDEFE6] font-semibold">
-                    Festive & Wedding Special
+                    Festive & Party Special
                   </span>
                 </div>
                 <p class="text-2xl sm:text-3xl font-serif font-medium text-white tracking-normal">
@@ -94,7 +94,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
                   Heavy Fancy & Festive Suits
                 </h3>
                 <p class="text-sm text-[#71847B] leading-relaxed font-sans font-normal">
-                  Rich Shararas, Anarkalis, and traditional Gota Patti suit sets for celebrations and weddings.
+                  Rich Shararas, Anarkalis, and traditional Gota Patti suit sets for celebrations and festive occasions.
                 </p>
               </div>
 

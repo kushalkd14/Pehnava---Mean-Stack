@@ -4,18 +4,18 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { WhatsAppService } from '../../services/whatsapp.service';
 
 export interface GalleryItem {
-  id: string;
-  title: string;
-  category: 'Boutique' | 'Store' | 'Cotton Suits' | 'Festive Suits';
-  image: string;
-  description: string;
+    id: string;
+    title: string;
+    category: 'Boutique' | 'Store' | 'Cotton Suits' | 'Festive Suits';
+    image: string;
+    description: string;
 }
 
 @Component({
-  selector: 'app-gallery-grid',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-gallery-grid',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section class="py-12 sm:py-16 bg-[#FAF8F3]">
       <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
         <!-- Image Grid -->
@@ -105,52 +105,52 @@ export interface GalleryItem {
   `
 })
 export class GalleryGridComponent {
-  activeModalItem = signal<GalleryItem | null>(null);
+    activeModalItem = signal<GalleryItem | null>(null);
 
-  readonly items: GalleryItem[] = [
-    {
-      id: 'g-real-store-1',
-      title: 'Pehnava RJ01 Arched Shelving & Customer Counter',
-      category: 'Store',
-      image: 'assets/store/real-store-01.webp',
-      description: 'Real inside view of our Mayo Link Road store with arched shelves filled with daily cotton suits & printed Kurtis.',
-    },
-    {
-      id: 'g-real-staff-1',
-      title: 'Pehnava RJ01 Dedicated Styling Team',
-      category: 'Boutique',
-      image: 'assets/store/real-staff-01.webp',
-      description: 'Our friendly boutique staff showing floral Kurtis, Bandhani suit sets, and dailywear ethnic outfits.',
-    },
-    {
-      id: 'g-real-store-2',
-      title: 'Curated Cotton Suits & Bandhani Racks',
-      category: 'Store',
-      image: 'assets/store/real-store-02.webp',
-      description: 'Stacked cotton suit sets, Bandhani dupattas, and daily wear ethnic Kurtis at Pehnava RJ01 counter.',
-    },
-    {
-      id: 'g-daily-suit-1',
-      title: 'Pastel Printed Cotton Kurti Suit Set',
-      category: 'Cotton Suits',
-      image: 'assets/gallery/daily-suit-01.webp',
-      description: 'Breathable Mulmul cotton printed suit set tailored for everyday comfort and workwear.',
-    },
-    {
-      id: 'g-festive-suit-1',
-      title: 'Rajasthani Bandhani Gota Patti Suit Set',
-      category: 'Festive Suits',
-      image: 'assets/gallery/bandhani-suit-01.webp',
-      description: 'Vibrant pink Bandhani ethnic suit set accented with traditional Gota Patti borders.',
-    },
-    {
-      id: 'g-real-store-3',
-      title: 'Mayo Link Road Boutique Corridor & Trial Arch',
-      category: 'Boutique',
-      image: 'assets/store/real-store-03.webp',
-      description: 'Ambiance of our Ajmer boutique featuring track lights, ornate ceiling paneling, and trial rooms.',
-    },
-  ];
+    readonly items: GalleryItem[] = [
+        {
+            id: 'g-real-store-1',
+            title: 'Pehnava Arched Shelving & Customer Counter',
+            category: 'Store',
+            image: 'assets/store/real-store-01.webp',
+            description: 'Real inside view of our Mayo Link Road store with arched shelves filled with daily cotton suits & printed Kurtis.',
+        },
+        {
+            id: 'g-real-staff-1',
+            title: 'Pehnava Dedicated Styling Team',
+            category: 'Boutique',
+            image: 'assets/store/real-staff-01.webp',
+            description: 'Our friendly boutique staff showing floral Kurtis, Bandhani suit sets, and dailywear ethnic outfits.',
+        },
+        {
+            id: 'g-real-store-2',
+            title: 'Curated Cotton Suits & Bandhani Racks',
+            category: 'Store',
+            image: 'assets/store/real-store-02.webp',
+            description: 'Stacked cotton suit sets, Bandhani dupattas, and daily wear ethnic Kurtis at Pehnava counter.',
+        },
+        {
+            id: 'g-daily-suit-1',
+            title: 'Pastel Printed Cotton Kurti Suit Set',
+            category: 'Cotton Suits',
+            image: 'assets/gallery/daily-suit-01.webp',
+            description: 'Breathable Mulmul cotton printed suit set tailored for everyday comfort and workwear.',
+        },
+        {
+            id: 'g-festive-suit-1',
+            title: 'Rajasthani Bandhani Gota Patti Suit Set',
+            category: 'Festive Suits',
+            image: 'assets/gallery/bandhani-suit-01.webp',
+            description: 'Vibrant pink Bandhani ethnic suit set accented with traditional Gota Patti borders.',
+        },
+        {
+            id: 'g-real-store-3',
+            title: 'Mayo Link Road Boutique Corridor & Trial Arch',
+            category: 'Boutique',
+            image: 'assets/store/real-store-03.webp',
+            description: 'Ambiance of our Ajmer boutique featuring track lights, ornate ceiling paneling, and trial rooms.',
+        },
+    ];
 
-  readonly whatsAppService = inject(WhatsAppService);
+    readonly whatsAppService = inject(WhatsAppService);
 }

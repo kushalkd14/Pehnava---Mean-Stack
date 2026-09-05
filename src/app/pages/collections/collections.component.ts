@@ -63,7 +63,7 @@ import { Collection } from '../../models/catalog.models';
         <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
           <h3 class="text-2xl font-bold text-[#155E5B]">Looking for custom size adjustments or boutique trials?</h3>
           <p class="text-xs sm:text-sm text-[#71847B]">
-            Our in-house master tailors provide custom fitting for every outfit in our collection.
+            Our Mayo Link Road boutique studio in Ajmer features private trial rooms and personal styling support.
           </p>
           <div>
             <button
@@ -87,15 +87,12 @@ export class CollectionsComponent implements OnInit {
 
     readonly filterCategories = [
         'All',
-        // 'Premium Kurtis',
         'Short Kurtis',
-        // 'Cotton Collection',
         'Casual Suits',
         'Heavy Fancy Suits',
         'Co-Ord Sets',
         'Bottom Wear',
         'T-Shirts',
-        // 'Modern Grace',
         'Festive Collection',
         'New Arrivals',
     ];
@@ -114,8 +111,8 @@ export class CollectionsComponent implements OnInit {
 
     ngOnInit(): void {
         this.seo.setMeta({
-            title: 'Women’s Boutique Collections | Premium Kurtis, Suits, Co-Ords & Bottom Wear',
-            description: 'Explore Pehnava RJ01’s primary women’s collections: Short Kurtis, Casual Suits, Heavy Fancy Suits, Co-Ord Sets, Bottom Wear & Tees in Ajmer.',
+            title: "Women's Ethnic Wear Collections in Ajmer | Pehnava",
+            description: "Explore Pehnava’s primary women’s collections in Ajmer: Short Kurtis, Decent Printed Casual Suits, Heavy Fancy Suits, Co-Ord Sets, Bottom Wear & Tees.",
             url: '/collections',
         });
 

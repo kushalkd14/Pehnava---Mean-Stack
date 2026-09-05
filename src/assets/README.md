@@ -1,6 +1,6 @@
-# Pehnava RJ01 Asset Management & Documentation
+# Pehnava Asset Management & Documentation
 
-This directory contains all optimized local visual assets for **Pehnava RJ01** (Pahnave Wale Bhaiya), categorized from Instagram posts, boutique showcase photography, and store imagery.
+This directory contains all optimized local visual assets for **Pehnava** (Pahnave Wale Bhaiya), categorized from Instagram posts, boutique showcase photography, and store imagery.
 
 ---
 

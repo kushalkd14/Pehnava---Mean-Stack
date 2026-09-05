@@ -22,7 +22,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
           <div class="lg:col-span-5 flex flex-col items-start">
             <div class="flex items-center gap-3 mb-6">
               <div class="w-10 h-10 rounded-full bg-[#155E5B] p-0.5 shadow-md flex items-center justify-center shrink-0 border border-[#B89452]/40">
-                <img src="pehnava-logo.png" alt="Pehnava RJ01" class="w-full h-full object-contain rounded-full" />
+                <img src="pehnava-logo.png" alt="Pehnava Boutique" class="w-full h-full object-contain rounded-full" />
               </div>
               <div class="flex flex-col">
                 <div class="inline-flex items-baseline gap-1">
@@ -37,7 +37,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
             </div>
 
             <p class="text-sm text-[#DDEFE6]/90 font-sans font-normal leading-relaxed max-w-sm mb-6">
-              A premier luxury boutique in Rajasthan. Specializing in handcrafted Bridal Lehengas, Designer Sarees, Reception Gowns & Festive Ethnic Outfits for every memorable occasion.
+              A premier women's fashion boutique in Ajmer, Rajasthan. Specializing in handcrafted Short Kurtis, Decent Printed Designer Suits, Co-Ord Sets & Festive Ethnic Outfits for every occasion.
             </p>
 
             <!-- Social & WhatsApp Buttons -->
@@ -133,6 +133,10 @@ import { WhatsAppService } from '../../services/whatsapp.service';
               <p>© {{ currentYear }} Pehnava Boutique. All rights reserved. Ajmer, Rajasthan.</p>
             </div>
             <span class="hidden sm:inline text-[#B89452]">•</span>
+            <a routerLink="/privacy" class="text-[#DDEFE6]/80 hover:text-[#D4B270] transition-colors hover:underline">Privacy Policy</a>
+            <span class="hidden sm:inline text-[#B89452]">•</span>
+            <a routerLink="/terms" class="text-[#DDEFE6]/80 hover:text-[#D4B270] transition-colors hover:underline">Terms & Conditions</a>
+            <span class="hidden sm:inline text-[#B89452]">•</span>
             <p>
               Designed & Developed by
               <a
@@ -173,6 +177,8 @@ export class FooterComponent {
     { name: 'Boutique Collections', path: '/collections' },
     { name: 'Client & Store Gallery', path: '/gallery' },
     { name: 'Visit Store & Contact', path: '/contact' },
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
   ];
 
   scrollToTop(): void {

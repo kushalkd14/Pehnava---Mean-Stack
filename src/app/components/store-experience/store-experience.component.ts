@@ -4,10 +4,10 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BoutiqueDividerComponent } from '../../shared/components/boutique-divider/boutique-divider.component';
 
 @Component({
-  selector: 'app-store-experience',
-  standalone: true,
-  imports: [CommonModule, IconComponent, BoutiqueDividerComponent],
-  template: `
+    selector: 'app-store-experience',
+    standalone: true,
+    imports: [CommonModule, IconComponent, BoutiqueDividerComponent],
+    template: `
     <section class="py-20 lg:py-28 bg-[#F3EEE4] relative overflow-hidden">
       <!-- Background Decorative Touches -->
       <div class="absolute inset-0 bg-[radial-gradient(#AFCFC0_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none"></div>
@@ -66,21 +66,21 @@ import { BoutiqueDividerComponent } from '../../shared/components/boutique-divid
                   Bespoke Trial Experience
                 </h3>
                 <p class="text-xs text-[#71847B] leading-relaxed">
-                  Private, spacious trial rooms designed for comfortable outfit fittings with matching jewelry pairing.
+                  Private, spacious trial rooms designed for comfortable outfit fittings.
                 </p>
               </div>
             </div>
 
             <div class="bg-[#FAF8F3] p-6 rounded-2xl border border-[#D5D8D3] shadow-xs flex items-start gap-4">
               <div class="p-3 rounded-full bg-[#DDEFE6] text-[#155E5B] shrink-0">
-                <app-icon name="scissors" [size]="20" customClass="text-[#B8875A]"></app-icon>
+                <app-icon name="layers" [size]="20" customClass="text-[#B8875A]"></app-icon>
               </div>
               <div>
                 <h3 class="text-base font-serif font-semibold text-[#155E5B] mb-1">
-                  Custom Size Alterations
+                  Curated Collection Racks
                 </h3>
                 <p class="text-xs text-[#71847B] leading-relaxed">
-                  In-house master tailors available to ensure flawless silhouette fitting for every client.
+                  Explore fresh boutique arrivals updated regularly with short kurtis, designer suits, and co-ord sets.
                 </p>
               </div>
             </div>
@@ -104,4 +104,4 @@ import { BoutiqueDividerComponent } from '../../shared/components/boutique-divid
     </section>
   `
 })
-export class StoreExperienceComponent {}
+export class StoreExperienceComponent { }

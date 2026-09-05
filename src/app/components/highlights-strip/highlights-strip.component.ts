@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 
 interface HighlightItem {
-  iconName: string;
-  iconColor: string;
-  bgColor: string;
-  title: string;
-  description: string;
+    iconName: string;
+    iconColor: string;
+    bgColor: string;
+    title: string;
+    description: string;
 }
 
 @Component({
-  selector: 'app-highlights-strip',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-highlights-strip',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section class="py-4 bg-[#FAF8F3] border-y border-[#AFCFC0]/60 relative z-20 overflow-hidden">
       <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="flex items-center justify-between gap-3 sm:gap-4 overflow-x-auto no-scrollbar py-1">
@@ -44,41 +44,41 @@ interface HighlightItem {
   `
 })
 export class HighlightsStripComponent {
-  highlights: HighlightItem[] = [
-    {
-      iconName: 'sparkles',
-      iconColor: 'text-[#B8875A]',
-      bgColor: 'bg-[#DDEFE6]',
-      title: 'New Arrivals',
-      description: 'Fresh Weekly Drops'
-    },
-    {
-      iconName: 'tag',
-      iconColor: 'text-[#B89452]',
-      bgColor: 'bg-[#F3EEE4]',
-      title: 'Festive Offers',
-      description: 'Exclusive Boutique Pricing'
-    },
-    {
-      iconName: 'shirt',
-      iconColor: 'text-[#155E5B]',
-      bgColor: 'bg-[#DDEFE6]',
-      title: '2000+ Premium Styles',
-      description: 'Curated Ethnic Couture'
-    },
-    {
-      iconName: 'refresh-cw',
-      iconColor: 'text-[#B8875A]',
-      bgColor: 'bg-[#F3EEE4]',
-      title: 'New Stock Every Week',
-      description: 'In-Store & WhatsApp Catalog'
-    },
-    {
-      iconName: 'map-pin',
-      iconColor: 'text-[#155E5B]',
-      bgColor: 'bg-[#DDEFE6]',
-      title: 'Ajmer Boutique Studio',
-      description: 'Mayo Link Road Physical Store'
-    },
-  ];
+    highlights: HighlightItem[] = [
+        {
+            iconName: 'sparkles',
+            iconColor: 'text-[#B8875A]',
+            bgColor: 'bg-[#DDEFE6]',
+            title: 'New Arrivals',
+            description: 'Fresh Weekly Drops'
+        },
+        {
+            iconName: 'tag',
+            iconColor: 'text-[#B89452]',
+            bgColor: 'bg-[#F3EEE4]',
+            title: 'Festive Offers',
+            description: 'Exclusive Boutique Pricing'
+        },
+        {
+            iconName: 'shirt',
+            iconColor: 'text-[#155E5B]',
+            bgColor: 'bg-[#DDEFE6]',
+            title: '200+ Different Premium Styles',
+            description: 'Curated Ethnic Couture'
+        },
+        {
+            iconName: 'refresh-cw',
+            iconColor: 'text-[#B8875A]',
+            bgColor: 'bg-[#F3EEE4]',
+            title: 'New Stock Every Week',
+            description: 'In-Store & WhatsApp Catalog'
+        },
+        {
+            iconName: 'map-pin',
+            iconColor: 'text-[#155E5B]',
+            bgColor: 'bg-[#DDEFE6]',
+            title: 'Ajmer Boutique Studio',
+            description: 'Mayo Link Road Physical Store'
+        },
+    ];
 }

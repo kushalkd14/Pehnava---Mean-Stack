@@ -122,7 +122,7 @@ export class WhatsAppModalComponent implements OnChanges, OnDestroy {
   readonly whatsappDisplayNumber = WHATSAPP_DISPLAY_NUMBER;
 
   readonly presetMessages = [
-    { label: 'Festive & Wedding Suits', message: "Hello Pehnava, I'm interested in the Festive & Wedding Suits collection." },
+    { label: 'Heavy Festive Suits', message: "Hello Pehnava, I'm interested in the Heavy Festive Suits collection." },
     { label: 'Gota Patti Shararas', message: "Hello Pehnava, I'm interested in your Gota Patti Shararas collection." },
     { label: 'Co-Ord Sets', message: "Hello Pehnava, I'm interested in Co-Ord Sets & Utility fits." },
     { label: 'Store Visit', message: "Hello Pehnava, I would like to schedule a store visit to try outfits." },

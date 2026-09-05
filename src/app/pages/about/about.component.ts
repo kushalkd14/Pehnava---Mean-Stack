@@ -47,7 +47,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
 
             <!-- Stylized Floating Quote with Gold Brand Accent -->
             <p class="text-sm sm:text-lg md:text-xl font-serif italic text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-relaxed max-w-2xl mx-auto">
-              "<strong class="text-[#D4B270] font-serif not-italic font-semibold drop-shadow-sm">Pehnava Wale Bhaiya</strong> is more than just a clothing brand — it is a journey of struggle, faith and never giving up."
+              "<strong class="text-[#D4B270] font-serif not-italic font-semibold drop-shadow-sm">Pehnava</strong> is more than just a clothing brand — it is a journey of struggle, faith and never giving up."
             </p>
 
             <!-- Subtle Gold Gradient Accent Line -->
@@ -127,7 +127,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                     <span class="text-[10px] uppercase font-bold tracking-widest">Founder & Visionary</span>
                   </div>
                   <p class="font-bold text-sm text-[#155E5B]">Ritik Soni</p>
-                  <p class="text-xs text-[#71847B] mt-0.5">Pehnava Wale Bhaiya, Ajmer</p>
+                  <p class="text-xs text-[#71847B] mt-0.5">Pehnava, Ajmer</p>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
               </div>
 
               <h2 class="text-2xl sm:text-4xl font-bold text-[#155E5B] tracking-tight leading-tight font-sans">
-                From Struggle to Faith: The Rise of Pehnava Wale Bhaiya
+                From Struggle to Faith: The Rise of Pehnava
               </h2>
 
               <div class="space-y-4 text-sm sm:text-base text-[#71847B] leading-relaxed font-sans">
@@ -159,7 +159,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                   Slowly, the audience grew. Customers trusted the brand. The business grew.
                 </p>
                 <p class="text-base sm:text-lg font-bold text-[#155E5B] pt-2">
-                  Today, what started as a small family business has become <span class="text-[#B8875A]">Pehnava Wale Bhaiya</span>, loved by thousands of customers.
+                  Today, what started as a small family business has become <span class="text-[#B8875A]">Pehnava</span>, loved by thousands of customers.
                 </p>
               </div>
             </div>
@@ -257,9 +257,9 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                   <div class="w-12 h-12 rounded-2xl bg-[#F0F7F3] text-[#155E5B] group-hover:bg-[#155E5B] group-hover:text-white transition-colors duration-300 flex items-center justify-center font-bold text-lg border border-[#AFCFC0]/60">
                     04
                   </div>
-                  <h3 class="text-lg font-bold text-[#155E5B] font-sans">Pehnava Wale Bhaiya</h3>
+                  <h3 class="text-lg font-bold text-[#155E5B] font-sans">Pehnava</h3>
                   <p class="text-xs sm:text-sm text-[#71847B] leading-relaxed">
-                    Today, that small beginning has grown into <strong class="text-[#155E5B]">Pehnava Wale Bhaiya</strong> — and our journey has only just begun.
+                    Today, that small beginning has grown into <strong class="text-[#155E5B]">Pehnava</strong> — and our journey has only just begun.
                   </p>
                 </div>
                 <div class="pt-2 border-t border-[#F3EEE4] flex items-center gap-1.5 text-xs text-[#B8875A] font-semibold">
@@ -336,7 +336,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                 class="w-full sm:w-auto btn-pehnava-primary px-6 sm:px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 cursor-pointer shadow-md active:scale-98 text-center whitespace-normal leading-snug"
               >
                 <app-icon name="whatsapp" [size]="18" customClass="text-[#25D366] shrink-0"></app-icon>
-                <span>Connect with Pehnava Wale Bhaiya on WhatsApp</span>
+                <span>Connect with Pehnava on WhatsApp</span>
               </button>
             </div>
           </div>
@@ -356,8 +356,8 @@ export class AboutComponent implements OnInit {
 
     ngOnInit(): void {
         this.seo.setMeta({
-            title: 'Our Story | Pehnava Wale Bhaiya - Founder Ritik Soni',
-            description: 'Discover the inspiring story of Pehnava Wale Bhaiya & founder Ritik Soni. From a humble family business in Ajmer to empowering thousands of women with affordable, high-quality ethnic fashion.',
+            title: "About Pehnava | Women's Fashion Boutique in Ajmer",
+            description: "Discover the journey of Pehnava & founder Ritik Soni (Pehnava). From a family saree business in Ajmer to empowering thousands of women with affordable, high-quality ethnic fashion.",
             url: '/about',
         });
 

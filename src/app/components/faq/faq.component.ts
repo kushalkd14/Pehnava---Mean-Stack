@@ -23,7 +23,7 @@ export interface FaqItem {
             Frequently Asked Questions
           </h2>
           <p class="text-xs sm:text-sm text-[#71847B]">
-            Everything you need to know about visiting Pehnava RJ01, custom bridal appointments, and WhatsApp ordering.
+            Everything you need to know about visiting Pehnava Pehnava, outfit fitting appointments, and WhatsApp ordering.
           </p>
         </div>
 
@@ -68,13 +68,13 @@ export class FaqComponent {
     readonly faqs: FaqItem[] = [
         {
             id: 'faq-1',
-            question: 'Where is Pehnava RJ01 boutique located?',
-            answer: 'Our boutique studio is located opposite Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305001.'
+            question: 'Where is Pehnava located?',
+            answer: 'Our Shop is located opposite Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305001.'
         },
         {
             id: 'faq-2',
             question: 'What clothing collections do you offer?',
-            answer: 'We offer exclusive Bridal Lehengas, Designer Sarees, Reception Gowns, Sangeet Outfits, Designer Anarkalis, Shararas, and Festive Ethnic Wear.'
+            answer: 'We offer Short Kurtis, Decent Printed Designer Suits, Co-Ord Sets, Premium Cotton T-Shirts, Bottom Wear, Shararas, and Festive Ethnic Wear.'
         },
         {
             id: 'faq-3',
@@ -83,13 +83,13 @@ export class FaqComponent {
         },
         {
             id: 'faq-4',
-            question: 'Do you offer custom fitting and alterations?',
-            answer: 'Yes! Our physical store in Ajmer offers personalized fitting, blouse custom alterations, and bridal consultation to ensure your outfit fits perfectly.'
+            question: 'Can I try outfits before purchasing at your Ajmer store?',
+            answer: 'Yes! Our physical store on Mayo Link Road features private trial rooms and personal styling assistance so you can try on your favorite outfits comfortably.'
         },
         {
             id: 'faq-5',
             question: 'What are your store operating hours?',
-            answer: 'We are open all 7 days a week from 11:00 AM to 9:00 PM.'
+            answer: 'We are open all 7 days a week from 10:00 AM to 9:00 PM.'
         }
     ];
 

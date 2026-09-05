@@ -9,10 +9,10 @@ import { WhatsAppService } from '../../services/whatsapp.service';
 import { BUSINESS_CONFIG } from '../../config/business';
 
 @Component({
-  selector: 'app-contact-page',
-  standalone: true,
-  imports: [CommonModule, FormsModule, IconComponent, MapSectionComponent],
-  template: `
+    selector: 'app-contact-page',
+    standalone: true,
+    imports: [CommonModule, FormsModule, IconComponent, MapSectionComponent],
+    template: `
     <main class="pt-24 pb-16 sm:pt-28 bg-[#FAF8F3]">
       <!-- Contact Hero Banner -->
       <section class="py-12 sm:py-16 bg-[#F3EEE4] border-b border-[#D5D8D3]">
@@ -24,7 +24,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
             Visit Store & WhatsApp Enquiry
           </h1>
           <p class="text-sm sm:text-base text-[#71847B] leading-relaxed">
-            Have a question about an outfit or want to schedule a bridal trial session? Connect with Pehnava RJ01 boutique team instantly.
+            Have a question about an outfit or want to schedule a trial session? Connect with Pehnava boutique team instantly.
           </p>
         </div>
       </section>
@@ -150,31 +150,31 @@ import { BUSINESS_CONFIG } from '../../config/business';
   `
 })
 export class ContactComponent implements OnInit {
-  private readonly seo = inject(SeoService);
-  private readonly schema = inject(SchemaService);
-  readonly whatsAppService = inject(WhatsAppService);
-  readonly businessConfig = BUSINESS_CONFIG;
+    private readonly seo = inject(SeoService);
+    private readonly schema = inject(SchemaService);
+    readonly whatsAppService = inject(WhatsAppService);
+    readonly businessConfig = BUSINESS_CONFIG;
 
-  name = '';
-  category = 'Co-Ord Set';
-  messageText = '';
+    name = '';
+    category = 'Co-Ord Set';
+    messageText = '';
 
-  ngOnInit(): void {
-    this.seo.setMeta({
-      title: 'Contact Pehnava RJ01 | Store Location & WhatsApp Enquiry',
-      description: 'Find Pehnava RJ01 store address on Mayo Link Road Ajmer, view business hours, or send instant WhatsApp enquiries for bridal outfits.',
-      url: '/contact',
-    });
+    ngOnInit(): void {
+        this.seo.setMeta({
+            title: 'Pehnava Ajmer | Store Location & Contact',
+            description: 'Find Pehnava boutique address on Mayo Link Road Ajmer, view store hours, get directions, or send direct WhatsApp enquiries for women’s outfits.',
+            url: '/contact',
+        });
 
-    this.schema.injectBreadcrumbSchema([
-      { name: 'Home', url: '/' },
-      { name: 'Contact', url: '/contact' },
-    ]);
-  }
+        this.schema.injectBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Contact', url: '/contact' },
+        ]);
+    }
 
-  handleFormSubmit(e: Event): void {
-    e.preventDefault();
-    const formatted = `Hello Pehnava, my name is ${this.name || 'Client'}. I am interested in ${this.category}. ${this.messageText}`;
-    this.whatsAppService.openWhatsApp(formatted);
-  }
+    handleFormSubmit(e: Event): void {
+        e.preventDefault();
+        const formatted = `Hello Pehnava, my name is ${this.name || 'Client'}. I am interested in ${this.category}. ${this.messageText}`;
+        this.whatsAppService.openWhatsApp(formatted);
+    }
 }

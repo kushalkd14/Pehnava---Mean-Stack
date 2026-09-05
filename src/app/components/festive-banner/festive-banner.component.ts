@@ -65,7 +65,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0E4543]/50 via-transparent to-transparent pointer-events-none"></div>
                 <div class="absolute bottom-3 left-3 right-3 p-2.5 sm:p-3 rounded-xl bg-[#FAF8F3]/95 backdrop-blur-sm border border-[#AFCFC0] flex items-center justify-between text-xs font-serif font-semibold text-[#155E5B]">
-                  <span>Festive & Wedding Special</span>
+                  <span>Festive & Party Special</span>
                   <span class="text-[#B8875A] font-sans font-bold text-[10px] uppercase">Ajmer Boutique</span>
                 </div>
               </div>
@@ -77,14 +77,14 @@ import { WhatsAppService } from '../../services/whatsapp.service';
   `
 })
 export class FestiveBannerComponent {
-  @Input() title = 'Festive & Wedding Drop 2026';
-  @Input() headline = 'Celebrate Traditions in Royal Ethnic Couture';
-  @Input() description = 'Handcrafted Leheriya, Gota Patti, Shararas, and heavy Anarkalis designed for upcoming festive celebrations and family weddings.';
+  @Input() title = 'Festive & Seasonal Drop 2026';
+  @Input() headline = 'Celebrate Traditions in Elegant Ethnic Outfits';
+  @Input() description = 'Handcrafted Leheriya, Gota Patti, Shararas, and Anarkalis designed for upcoming festive celebrations and special occasions.';
   @Input() bannerImage = 'assets/collections/festive-collection.webp';
 
   readonly whatsAppService = inject(WhatsAppService);
 
   onEnquire(): void {
-    this.whatsAppService.openWhatsApp('Festive & Wedding Drop 2026');
+    this.whatsAppService.openWhatsApp('Festive & Seasonal Drop 2026');
   }
 }

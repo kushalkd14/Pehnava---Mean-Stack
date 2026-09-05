@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-brand-logo',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-brand-logo',
+    standalone: true,
+    imports: [CommonModule],
+    template: `
     @if (variant === 'footer' || variant === 'light') {
       <div class="inline-flex items-center gap-2.5 select-none" [ngClass]="customClass">
         <div class="w-8 h-8 rounded-full bg-[#FAF8F3] p-0.5 shadow-sm flex items-center justify-center shrink-0">
@@ -15,9 +15,7 @@ import { CommonModule } from '@angular/common';
           <span class="font-bold text-[#FAF8F3] text-2xl sm:text-3xl tracking-tight">
             PEHNAVA
           </span>
-          <span class="font-bold text-[#D4B270] text-2xl sm:text-3xl tracking-tight">
-            RJ01
-          </span>
+        
         </div>
       </div>
     } @else if (variant === 'large') {
@@ -28,9 +26,6 @@ import { CommonModule } from '@angular/common';
         <div class="inline-flex items-baseline gap-1.5">
           <span class="font-bold text-[#155E5B] text-3xl sm:text-4xl tracking-tight">
             PEHNAVA
-          </span>
-          <span class="font-bold text-[#B8875A] text-3xl sm:text-4xl tracking-tight">
-            RJ01
           </span>
         </div>
       </div>
@@ -44,15 +39,12 @@ import { CommonModule } from '@angular/common';
           <span class="font-bold text-[#155E5B] text-xl sm:text-2xl md:text-[25px] tracking-tight leading-none group-hover:text-[#0E4543] transition-colors duration-200">
             PEHNAVA
           </span>
-          <span class="font-bold text-[#B8875A] text-xl sm:text-2xl md:text-[25px] tracking-tight leading-none group-hover:text-[#96673D] transition-colors duration-200">
-            RJ01
-          </span>
         </div>
       </div>
     }
   `
 })
 export class BrandLogoComponent {
-  @Input() customClass = '';
-  @Input() variant: 'nav' | 'seal' | 'footer' | 'large' | 'light' = 'nav';
+    @Input() customClass = '';
+    @Input() variant: 'nav' | 'seal' | 'footer' | 'large' | 'light' = 'nav';
 }

@@ -4,10 +4,10 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { Look } from '../../models/catalog.models';
 
 @Component({
-  selector: 'app-featured-looks',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-featured-looks',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section id="featured-looks" class="py-20 lg:py-28 bg-[#FAF8F3] relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
@@ -20,7 +20,7 @@ import { Look } from '../../models/catalog.models';
             Featured Women’s Outfits & Styles
           </h2>
           <p class="text-sm sm:text-base text-[#71847B] font-sans font-normal max-w-2xl mx-auto leading-relaxed">
-            A visual curation of women's silhouettes, soft fabrics, and vibrant textures available at Pehnava RJ01 in Ajmer.
+            A visual curation of women's silhouettes, soft fabrics, and vibrant textures available at Pehnava in Ajmer.
             Tap any look to inspect details or connect directly on WhatsApp.
           </p>
         </div>
@@ -134,7 +134,7 @@ import { Look } from '../../models/catalog.models';
         <div class="mt-14 text-center text-xs text-[#71847B] flex items-center justify-center gap-2 max-w-2xl mx-auto" data-reveal>
           <app-icon name="store" [size]="14" customClass="text-[#B8875A] shrink-0"></app-icon>
           <p>
-            Visit Pehnava RJ01 on Mayo Link Road, Ajmer to experience fabrics, trial custom sizes, and explore matching coordinated accessories.
+            Visit Pehnava on Mayo Link Road, Ajmer to experience fabrics, trial custom sizes, and explore matching coordinated accessories.
           </p>
         </div>
       </div>
@@ -142,49 +142,49 @@ import { Look } from '../../models/catalog.models';
   `
 })
 export class FeaturedLooksComponent {
-  @Input() looks: Look[] = [];
-  @Input() selectedCategoryFilter = 'all';
-  @Output() selectCategoryFilter = new EventEmitter<string>();
-  @Output() openLookModal = new EventEmitter<Look>();
-  @Output() enquireWhatsApp = new EventEmitter<Look>();
+    @Input() looks: Look[] = [];
+    @Input() selectedCategoryFilter = 'all';
+    @Output() selectCategoryFilter = new EventEmitter<string>();
+    @Output() openLookModal = new EventEmitter<Look>();
+    @Output() enquireWhatsApp = new EventEmitter<Look>();
 
-  readonly filterTabs = [
-    { id: 'all', label: 'All Looks', accent: 'teal' },
-    { id: 'premium-kurtis', label: 'Premium Kurtis', accent: 'mint' },
-    { id: 'heavy-fancy-suits', label: 'Heavy Fancy Suits', accent: 'rose' },
-    { id: 'coord-sets', label: 'Co-Ord Sets', accent: 'terracotta' },
-    { id: 'bottom-wear', label: 'Bottom Wear', accent: 'wood' },
-    { id: 'tshirts', label: 'T-Shirts', accent: 'gold' },
-  ];
+    readonly filterTabs = [
+        { id: 'all', label: 'All Looks', accent: 'teal' },
+        { id: 'premium-kurtis', label: 'Premium Kurtis', accent: 'mint' },
+        { id: 'heavy-fancy-suits', label: 'Heavy Fancy Suits', accent: 'rose' },
+        { id: 'coord-sets', label: 'Co-Ord Sets', accent: 'terracotta' },
+        { id: 'bottom-wear', label: 'Bottom Wear', accent: 'wood' },
+        { id: 'tshirts', label: 'T-Shirts', accent: 'gold' },
+    ];
 
-  get filteredLooks(): Look[] {
-    return this.looks.filter((look) => {
-      if (this.selectedCategoryFilter === 'all' || !this.selectedCategoryFilter) return true;
-      return look.categorySlug === this.selectedCategoryFilter;
-    });
-  }
-
-  onSelectCategoryFilter(tabId: string): void {
-    this.selectCategoryFilter.emit(tabId);
-  }
-
-  getAccentBadgeStyles(accent?: string): string {
-    switch (accent) {
-      case 'rose':
-        return 'bg-[#F8EFEF] text-[#9E4A52] border-[#C98F91]/40';
-      case 'terracotta':
-        return 'bg-[#FAF0EB] text-[#A65330] border-[#C47B5A]/40';
-      case 'lavender':
-        return 'bg-[#F3F1F7] text-[#645973] border-[#9B91A8]/40';
-      case 'gold':
-        return 'bg-[#FAF6ED] text-[#8C6D33] border-[#B89452]/40';
-      case 'mint':
-        return 'bg-[#DDEFE6] text-[#155E5B] border-[#AFCFC0]';
-      case 'peach':
-        return 'bg-[#FAF3EE] text-[#A66347] border-[#E5B49B]/40';
-      case 'teal':
-      default:
-        return 'bg-[#DDEFE6] text-[#0E4543] border-[#AFCFC0]';
+    get filteredLooks(): Look[] {
+        return this.looks.filter((look) => {
+            if (this.selectedCategoryFilter === 'all' || !this.selectedCategoryFilter) return true;
+            return look.categorySlug === this.selectedCategoryFilter;
+        });
     }
-  }
+
+    onSelectCategoryFilter(tabId: string): void {
+        this.selectCategoryFilter.emit(tabId);
+    }
+
+    getAccentBadgeStyles(accent?: string): string {
+        switch (accent) {
+            case 'rose':
+                return 'bg-[#F8EFEF] text-[#9E4A52] border-[#C98F91]/40';
+            case 'terracotta':
+                return 'bg-[#FAF0EB] text-[#A65330] border-[#C47B5A]/40';
+            case 'lavender':
+                return 'bg-[#F3F1F7] text-[#645973] border-[#9B91A8]/40';
+            case 'gold':
+                return 'bg-[#FAF6ED] text-[#8C6D33] border-[#B89452]/40';
+            case 'mint':
+                return 'bg-[#DDEFE6] text-[#155E5B] border-[#AFCFC0]';
+            case 'peach':
+                return 'bg-[#FAF3EE] text-[#A66347] border-[#E5B49B]/40';
+            case 'teal':
+            default:
+                return 'bg-[#DDEFE6] text-[#0E4543] border-[#AFCFC0]';
+        }
+    }
 }

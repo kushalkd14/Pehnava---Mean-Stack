@@ -9,10 +9,10 @@ import { SchemaService } from '../../services/schema.service';
 import { WhatsAppService } from '../../services/whatsapp.service';
 
 @Component({
-  selector: 'app-collection-detail-page',
-  standalone: true,
-  imports: [CommonModule, RouterLink, IconComponent],
-  template: `
+    selector: 'app-collection-detail-page',
+    standalone: true,
+    imports: [CommonModule, RouterLink, IconComponent],
+    template: `
     <main class="pt-24 pb-16 sm:pt-28 bg-[#FAF8F3]">
       @if (collection(); as item) {
         <!-- Collection Header Banner -->
@@ -131,7 +131,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
         <!-- Fallback if not found -->
         <section class="py-24 text-center max-w-lg mx-auto">
           <h2 class="text-2xl font-bold text-[#155E5B] mb-4">Collection Not Found</h2>
-          <p class="text-sm text-[#71847B] mb-6">Explore all 11 primary women's fashion collections from Pehnava RJ01.</p>
+          <p class="text-sm text-[#71847B] mb-6">Explore all 11 primary women's fashion collections from Pehnava.</p>
           <a routerLink="/collections" class="btn-pehnava-primary px-6 py-3 rounded-full text-xs uppercase">
             View All Collections
           </a>
@@ -141,36 +141,47 @@ import { WhatsAppService } from '../../services/whatsapp.service';
   `
 })
 export class CollectionDetailPageComponent implements OnInit {
-  private readonly route = inject(ActivatedRoute);
-  private readonly seo = inject(SeoService);
-  private readonly schema = inject(SchemaService);
-  readonly whatsAppService = inject(WhatsAppService);
+    private readonly route = inject(ActivatedRoute);
+    private readonly seo = inject(SeoService);
+    private readonly schema = inject(SchemaService);
+    readonly whatsAppService = inject(WhatsAppService);
 
-  collection = signal<Collection | null>(null);
-  relatedLooks = signal<Look[]>([]);
+    collection = signal<Collection | null>(null);
+    relatedLooks = signal<Look[]>([]);
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      const slug = params['slug'];
-      const found = COLLECTIONS_DATA.find((c) => c.slug === slug) || COLLECTIONS_DATA[0];
-      this.collection.set(found);
+    ngOnInit(): void {
+        this.route.params.subscribe((params) => {
+            const slug = params['slug'];
+            const found = COLLECTIONS_DATA.find((c) => c.slug === slug);
 
-      const looks = FEATURED_LOOKS_DATA.filter((l) => l.categorySlug === slug || l.category.toLowerCase().includes(found.name.toLowerCase().split(' ')[0]));
-      this.relatedLooks.set(looks.length ? looks : FEATURED_LOOKS_DATA.slice(0, 3));
+            if (found) {
+                this.collection.set(found);
 
-      if (found) {
-        this.seo.setMeta({
-          title: `${found.name} | Pehnava RJ01 Women's Collection`,
-          description: `${found.description} Visit Pehnava RJ01 in Ajmer or enquire on WhatsApp for ${found.name}.`,
-          url: `/collections/${found.slug}`,
+                const looks = FEATURED_LOOKS_DATA.filter((l) => l.categorySlug === slug || l.category.toLowerCase().includes(found.name.toLowerCase().split(' ')[0]));
+                this.relatedLooks.set(looks.length ? looks : FEATURED_LOOKS_DATA.slice(0, 3));
+
+                this.seo.setMeta({
+                    title: `${found.name} Collection in Ajmer | Pehnava`,
+                    description: `${found.description} Discover ${found.name} at Pehnava boutique on Mayo Link Road, Ajmer or enquire on WhatsApp.`,
+                    url: `/collections/${found.slug}`,
+                    image: found.image,
+                    robots: 'index, follow',
+                });
+
+                this.schema.injectCollectionSchema(found);
+                this.schema.injectBreadcrumbSchema([
+                    { name: 'Home', url: '/' },
+                    { name: 'Collections', url: '/collections' },
+                    { name: found.name, url: `/collections/${found.slug}` },
+                ]);
+            } else {
+                this.collection.set(null);
+                this.seo.setMeta({
+                    title: 'Collection Not Found | Pehnava',
+                    description: 'The requested outfit collection could not be found.',
+                    robots: 'noindex, follow',
+                });
+            }
         });
-
-        this.schema.injectBreadcrumbSchema([
-          { name: 'Home', url: '/' },
-          { name: 'Collections', url: '/collections' },
-          { name: found.name, url: `/collections/${found.slug}` },
-        ]);
-      }
-    });
-  }
+    }
 }

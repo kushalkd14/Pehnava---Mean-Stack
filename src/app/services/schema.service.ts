@@ -1,9 +1,12 @@
 import { Injectable, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { BUSINESS_CONFIG } from '../config/business';
+import { Collection } from '../models/catalog.models';
 
 @Injectable({ providedIn: 'root' })
 export class SchemaService {
     private readonly document = inject(DOCUMENT);
+    private readonly siteUrl = 'https://pehnava---mean-stack.sswaggyiirush.workers.dev';
 
     injectSchemas(): void {
         this.injectLocalBusinessSchema();
@@ -15,18 +18,18 @@ export class SchemaService {
         const schema = {
             '@context': 'https://schema.org',
             '@type': ['LocalBusiness', 'ClothingStore'],
-            '@id': 'https://pehnava---mean-stack.sswaggyiirush.workers.dev/#store',
-            name: 'Pehnava RJ01',
-            description: 'Luxury fashion boutique in Ajmer, Rajasthan offering exclusive Bridal Wear, Lehengas, Designer Sarees, Gowns & Festive Outfits.',
-            url: 'https://pehnava---mean-stack.sswaggyiirush.workers.dev',
-            telephone: '+918005785709',
+            '@id': `${this.siteUrl}/#store`,
+            name: BUSINESS_CONFIG.name,
+            description: 'Premier women’s fashion boutique in Ajmer, Rajasthan offering Short Kurtis, Decent Printed Designer Suits, Co-Ord Sets, Bottom Wear & Festive Outfits.',
+            url: this.siteUrl,
+            telephone: `+${BUSINESS_CONFIG.whatsappNumber}`,
             priceRange: '₹₹ - ₹₹₹₹',
-            image: 'https://pehnava---mean-stack.sswaggyiirush.workers.dev/pehnava-logo.png',
+            image: `${this.siteUrl}/pehnava-logo.png`,
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Front of Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra',
-                addressLocality: 'Ajmer',
-                addressRegion: 'Rajasthan',
+                streetAddress: BUSINESS_CONFIG.fullAddress,
+                addressLocality: BUSINESS_CONFIG.city,
+                addressRegion: BUSINESS_CONFIG.state,
                 postalCode: '305001',
                 addressCountry: 'IN',
             },
@@ -39,13 +42,13 @@ export class SchemaService {
                 {
                     '@type': 'OpeningHoursSpecification',
                     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                    opens: '11:00',
+                    opens: '10:00',
                     closes: '21:00',
                 },
             ],
             sameAs: [
-                'https://www.instagram.com/pehnavarj01/',
-                'https://maps.app.goo.gl/1boS74EE8uDHqX3PA',
+                BUSINESS_CONFIG.instagramUrl,
+                BUSINESS_CONFIG.googleMapsUrl,
             ],
         };
         this.setScript('schema-local-business', schema);
@@ -55,12 +58,12 @@ export class SchemaService {
         const schema = {
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Pehnava RJ01',
-            url: 'https://pehnava---mean-stack.sswaggyiirush.workers.dev',
-            logo: 'https://pehnava---mean-stack.sswaggyiirush.workers.dev/pehnava-logo.png',
+            name: BUSINESS_CONFIG.name,
+            url: this.siteUrl,
+            logo: `${this.siteUrl}/pehnava-logo.png`,
             contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+918005785709',
+                telephone: `+${BUSINESS_CONFIG.whatsappNumber}`,
                 contactType: 'customer service',
                 availableLanguage: ['English', 'Hindi'],
             },
@@ -71,20 +74,20 @@ export class SchemaService {
     injectFAQSchema(faqs?: Array<{ question: string; answer: string }>): void {
         const defaultFaqs = [
             {
-                question: 'Where is Pehnava RJ01 located?',
-                answer: 'Pehnava RJ01 is located opposite Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305001.',
+                question: 'Where is Pehnava boutique located in Ajmer?',
+                answer: 'Pehnava is located opposite Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305001.',
             },
             {
-                question: 'What clothing collections are available at Pehnava RJ01?',
-                answer: 'We specialize in Bridal Lehengas, Designer Sarees, Reception Gowns, Party Wear, Anarkali Suits, Sharara Sets, and Festive Ethnic Wear.',
+                question: 'What women’s clothing collections are available at Pehnava?',
+                answer: 'We specialize in Short Kurtis, Decent Printed Designer Suits, Co-Ord Sets, Premium Cotton T-Shirts, Bottom Wear, Sharara Sets, and Festive Ethnic Wear.',
             },
             {
-                question: 'Can I enquire or order via WhatsApp?',
-                answer: 'Yes! You can click any "Enquire on WhatsApp" button on our website or text us directly at +91 80057 85709.',
+                question: 'Can I enquire or order outfits via WhatsApp?',
+                answer: 'Yes! You can click any "Enquire on WhatsApp" button on our website or text us directly at +91 80057 85709 for size availability and ordering.',
             },
             {
-                question: 'What are the store operating hours?',
-                answer: 'We are open all 7 days a week from 11:00 AM to 9:00 PM.',
+                question: 'What are the boutique operating hours in Ajmer?',
+                answer: 'We are open all 7 days a week from 10:00 AM to 9:00 PM for walk-ins and trials.',
             },
         ];
 
@@ -104,16 +107,36 @@ export class SchemaService {
         this.setScript('schema-faq', schema);
     }
 
+    injectCollectionSchema(collection: Collection): void {
+        const schema = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: `${collection.name} | Pehnava Ajmer`,
+            description: collection.description,
+            url: `${this.siteUrl}/collections/${collection.slug}`,
+            image: collection.image.startsWith('http') ? collection.image : `${this.siteUrl}/${collection.image}`,
+            publisher: {
+                '@type': 'Organization',
+                name: BUSINESS_CONFIG.name,
+                logo: `${this.siteUrl}/pehnava-logo.png`,
+            },
+        };
+        this.setScript('schema-collection-detail', schema);
+    }
+
     injectBreadcrumbSchema(items: Array<{ name: string; url: string }>): void {
         const schema = {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
-            itemListElement: items.map((item, idx) => ({
-                '@type': 'ListItem',
-                position: idx + 1,
-                name: item.name,
-                item: `https://pehnava---mean-stack.sswaggyiirush.workers.dev${item.url}`,
-            })),
+            itemListElement: items.map((item, idx) => {
+                const fullUrl = item.url.startsWith('http') ? item.url : `${this.siteUrl}${item.url.startsWith('/') ? '' : '/'}${item.url}`;
+                return {
+                    '@type': 'ListItem',
+                    position: idx + 1,
+                    name: item.name,
+                    item: fullUrl,
+                };
+            }),
         };
         this.setScript('schema-breadcrumb', schema);
     }

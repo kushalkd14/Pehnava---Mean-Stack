@@ -5,10 +5,10 @@ import { Store } from '../../models/catalog.models';
 import { BUSINESS_CONFIG } from '../../config/business';
 
 @Component({
-  selector: 'app-about-section',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-about-section',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section id="about" class="py-20 lg:py-28 gradient-deep-brand text-[#FAF8F3] relative overflow-hidden">
       <!-- Decorative Gold & Teal Glows -->
       <div class="absolute top-10 right-10 w-[500px] h-[500px] bg-[#B89452]/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -47,7 +47,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
                   <span class="text-[10px] uppercase font-bold tracking-widest">Founder Story</span>
                 </div>
                 <p class="font-serif italic text-xs text-[#155E5B] leading-tight mb-2">
-                  "Pehnava Wale Bhaiya is a journey of struggle, faith and never giving up."
+                  "Pehnava is a journey of struggle, faith and never giving up."
                 </p>
                 <span class="text-[10px] uppercase tracking-wider text-[#B8875A] font-bold block">
                   — Ritik Soni, Founder
@@ -73,7 +73,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
 
             <div class="space-y-4 text-sm sm:text-base text-[#DDEFE6]/90 leading-relaxed font-sans font-normal mb-8">
               <p>
-                Founded by <strong class="font-semibold text-white">Ritik Soni</strong> in Ajmer after years of perseverance and hard work, Pehnava Wale Bhaiya has grown from a humble family saree business into a brand trusted by thousands of customers.
+                Founded by <strong class="font-semibold text-white">Ritik Soni</strong> in Ajmer after years of perseverance and hard work, Pehnava has grown from a humble family saree business into a brand trusted by thousands of customers.
               </p>
               <p>
                 Our mission is simple: to make stylish, high-quality ethnic fashion affordable and accessible to women across India, crafted with honest pricing and customer trust at heart.
@@ -101,8 +101,8 @@ import { BUSINESS_CONFIG } from '../../config/business';
   `
 })
 export class AboutSectionComponent {
-  @Input() store: Store | null = null;
+    @Input() store: Store | null = null;
 
-  readonly businessConfig = BUSINESS_CONFIG;
+    readonly businessConfig = BUSINESS_CONFIG;
 }
 

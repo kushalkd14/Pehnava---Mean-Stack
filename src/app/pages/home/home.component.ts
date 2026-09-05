@@ -5,7 +5,6 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { HighlightsStripComponent } from '../../components/highlights-strip/highlights-strip.component';
 import { CollectionCardComponent } from '../../components/collection-card/collection-card.component';
-import { ModernGraceSectionComponent } from '../../components/modern-grace-section/modern-grace-section.component';
 import { CoordEditSectionComponent } from '../../components/coord-edit-section/coord-edit-section.component';
 import { StoreExperienceComponent } from '../../components/store-experience/store-experience.component';
 import { InstagramShowcaseComponent } from '../../components/instagram-showcase/instagram-showcase.component';
@@ -19,24 +18,23 @@ import { WhatsAppService } from '../../services/whatsapp.service';
 import { Collection, Look } from '../../models/catalog.models';
 
 @Component({
-  selector: 'app-home-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    IconComponent,
-    HeroComponent,
-    HighlightsStripComponent,
-    CollectionCardComponent,
-    ModernGraceSectionComponent,
-    CoordEditSectionComponent,
-    StoreExperienceComponent,
-    InstagramShowcaseComponent,
-    TestimonialComponent,
-    MapSectionComponent,
-    BoutiqueDividerComponent,
-  ],
-  template: `
+    selector: 'app-home-page',
+    standalone: true,
+    imports: [
+        CommonModule,
+        RouterLink,
+        IconComponent,
+        HeroComponent,
+        HighlightsStripComponent,
+        CollectionCardComponent,
+        CoordEditSectionComponent,
+        StoreExperienceComponent,
+        InstagramShowcaseComponent,
+        TestimonialComponent,
+        MapSectionComponent,
+        BoutiqueDividerComponent,
+    ],
+    template: `
     <main class="overflow-x-hidden bg-[#FAF8F3]">
       <!-- 1. Hero Editorial -->
       <app-hero></app-hero>
@@ -123,9 +121,6 @@ import { Collection, Look } from '../../models/catalog.models';
         </div>
       </section>
 
-      <!-- 6. Modern Grace Edit Spotlight -->
-      <app-modern-grace-section></app-modern-grace-section>
-
       <!-- 7. Co-Ord Collection Edit Spotlight -->
       <app-coord-edit-section></app-coord-edit-section>
 
@@ -151,7 +146,7 @@ import { Collection, Look } from '../../models/catalog.models';
             Ready to Find Your Dream Outfit?
           </h2>
           <p class="text-sm text-[#DDEFE6] max-w-xl mx-auto leading-relaxed font-sans">
-            Connect with Pehnava RJ01 stylists directly on WhatsApp to inquire about designs, check fabric availability, or schedule your store appointment in Ajmer.
+            Connect with Pehnava stylists directly on WhatsApp to inquire about designs, check fabric availability, or schedule your store appointment in Ajmer.
           </p>
           <div>
             <button
@@ -168,27 +163,27 @@ import { Collection, Look } from '../../models/catalog.models';
   `
 })
 export class HomeComponent implements OnInit {
-  private readonly catalog = inject(CatalogService);
-  private readonly seo = inject(SeoService);
-  private readonly schema = inject(SchemaService);
-  readonly whatsAppService = inject(WhatsAppService);
+    private readonly catalog = inject(CatalogService);
+    private readonly seo = inject(SeoService);
+    private readonly schema = inject(SchemaService);
+    readonly whatsAppService = inject(WhatsAppService);
 
-  collections: Collection[] = [];
-  trendingLooks: Look[] = [];
+    collections: Collection[] = [];
+    trendingLooks: Look[] = [];
 
-  ngOnInit(): void {
-    this.seo.setMeta({
-      title: 'Pehnava RJ01 | Royal Festive Women’s Fashion Boutique in Ajmer',
-      description: 'Discover handcrafted Gota Patti Shararas, flared silk Anarkalis, pure Mulmul cotton suits & modern co-ord sets at Pehnava RJ01, Ajmer. Visit our studio or enquire on WhatsApp.',
-      url: '/',
-    });
+    ngOnInit(): void {
+        this.seo.setMeta({
+            title: 'Pehnava | Royal Festive Women’s Fashion Boutique in Ajmer',
+            description: 'Discover handcrafted Gota Patti Shararas, flared silk Anarkalis, pure Mulmul cotton suits & modern co-ord sets at Pehnava, Ajmer. Visit our studio or enquire on WhatsApp.',
+            url: '/',
+        });
 
-    this.schema.injectSchemas();
+        this.schema.injectSchemas();
 
-    this.catalog.collections().subscribe((res) => {
-      const targetSlugs = ['short-kurtis', 'heavy-fancy-suits', 'tshirts'];
-      this.collections = res.filter((item) => targetSlugs.includes(item.slug));
-    });
-    this.catalog.looks().subscribe((res) => (this.trendingLooks = res.slice(0, 6)));
-  }
+        this.catalog.collections().subscribe((res) => {
+            const targetSlugs = ['short-kurtis', 'heavy-fancy-suits', 'tshirts'];
+            this.collections = res.filter((item) => targetSlugs.includes(item.slug));
+        });
+        this.catalog.looks().subscribe((res) => (this.trendingLooks = res.slice(0, 3)));
+    }
 }

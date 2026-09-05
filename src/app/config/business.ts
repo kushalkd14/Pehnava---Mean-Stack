@@ -20,11 +20,11 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     city: 'Ajmer',
     state: 'Rajasthan',
     country: 'India',
-    fullAddress: 'Front Of Holy Family Hospital, Mayo Link Rd, near 9no. Petrol Pump, Nagra, Ajmer, Rajasthan 305007',
+    fullAddress: 'Front Of Holy Family Hospital, Mayo Link Rd, near 9no. Petrol Pump, Nagra, Ajmer, Rajasthan 305001',
     addressLines: [
         'Front Of Holy Family Hospital',
         'Mayo Link Rd, near 9no. Petrol Pump',
-        'Nagra, Ajmer, Rajasthan 305007',
+        'Nagra, Ajmer, Rajasthan 305001',
     ],
     landmarks: [
         'Front Of Holy Family Hospital',
@@ -37,7 +37,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     instagramHandle: '@pehnavarj01',
     whatsappNumber: WHATSAPP_NUMBER,
     whatsappDisplayNumber: WHATSAPP_DISPLAY_NUMBER,
-    storeTimings: '11:00 AM – 9:00 PM',
+    storeTimings: '10:00 AM – 9:00 PM',
     workingDays: 'Open All 7 Days',
 };
 
