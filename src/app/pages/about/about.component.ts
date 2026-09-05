@@ -7,76 +7,91 @@ import { SchemaService } from '../../services/schema.service';
 import { WhatsAppService } from '../../services/whatsapp.service';
 
 @Component({
-  selector: 'app-about-page',
-  standalone: true,
-  imports: [CommonModule, IconComponent, MapSectionComponent],
-  template: `
+    selector: 'app-about-page',
+    standalone: true,
+    imports: [CommonModule, IconComponent, MapSectionComponent],
+    template: `
     <main class="pt-20 sm:pt-24 bg-[#FAF8F3]">
       <!-- 1. Hero Banner with Joyful Staff & Achievement Badges -->
-      <section class="relative min-h-[540px] sm:min-h-[600px] flex items-center justify-center pt-16 pb-20 overflow-hidden bg-[#092B2A]">
-        <!-- Hero Background Staff Photography with Overlay -->
+      <section class="relative min-h-[580px] sm:min-h-[650px] flex flex-col justify-between pt-10 sm:pt-14 pb-8 sm:pb-10 overflow-hidden bg-[#092B2A]">
+        <!-- Hero Background Staff Photography with Clear Visibility -->
         <div class="absolute inset-0 z-0">
           <img
-            src="assets/store/staff-hero.webp"
-            alt="Smiling Pehnava Boutique Staff Working with Passion"
-            class="w-full h-full object-cover object-center scale-105 filter brightness-[0.82] saturate-[1.15]"
+            src="assets/store/real-staff-01.webp"
+            srcset="assets/store/real-staff-01-600.webp 600w, assets/store/real-staff-01-800.webp 800w, assets/store/real-staff-01-1200.webp 1200w, assets/store/real-staff-01-1920.webp 1920w"
+            sizes="100vw"
+            alt="Pehnava RJ01 Dedicated Styling Team in Ajmer Boutique"
+            class="w-full h-full object-contain sm:object-cover object-center sm:object-[center_35%] scale-100 filter brightness-95 contrast-[1.05]"
           />
-          <!-- Multi-Layer Luxury Dark Teal Gradients for Superior Text Readability -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#092B2A] via-[#0E4543]/80 to-[#155E5B]/70"></div>
-          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#092B2A]/50 to-[#092B2A]/90"></div>
+          <!-- Lightweight Gradient Overlay for Crisp Text Contrast & Clear Image Visibility -->
+          <div class="absolute inset-0 bg-gradient-to-b from-[#092B2A]/70 via-[#092B2A]/20 to-[#092B2A]/90"></div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8 w-full">
-          <!-- Top Pill -->
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E4543]/90 text-[#D4B270] text-xs font-bold uppercase tracking-[0.25em] border border-[#B89452]/50 shadow-md backdrop-blur-md">
-            <app-icon name="sparkles" [size]="14" customClass="text-[#B89452]"></app-icon>
-            <span>Brand Story & Passionate Team</span>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col justify-between h-full min-h-[500px] sm:min-h-[570px] w-full">
+          <!-- Top Pill (Moved to top edge) -->
+          <div class="pt-2">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#092B2A]/85 text-[#D4B270] text-xs font-bold uppercase tracking-[0.25em] border border-[#B89452]/60 shadow-md backdrop-blur-md">
+              <app-icon name="sparkles" [size]="14" customClass="text-[#B89452]"></app-icon>
+              <span>Brand Story & Passionate Team</span>
+            </div>
           </div>
 
-          <!-- Main Title -->
-          <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight font-sans drop-shadow-md">
-            Our Story
-          </h1>
+          <!-- Unique Luxury Quote Section (Shifted down below staff faces for 100% face visibility) -->
+          <div class="max-w-3xl mx-auto px-4 mt-auto mb-3 sm:mb-5 pt-4">
+            <!-- Unique Boutique Mantra Header Pill -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#092B2A]/70 backdrop-blur-md border border-[#B89452]/50 text-[#D4B270] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2.5 shadow-sm">
+              <span class="text-sm text-[#D4B270] font-serif leading-none">“</span>
+              <span>Our Core Mantra</span>
+              <span class="text-sm text-[#D4B270] font-serif leading-none">”</span>
+            </div>
 
-          <!-- Quote Card -->
-          <div class="bg-[#092B2A]/85 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-[#B89452]/40 shadow-2xl max-w-3xl mx-auto">
-            <p class="text-base sm:text-xl md:text-2xl font-serif italic text-[#DDEFE6] leading-relaxed">
-              "Pehnava Wale Bhaiya is more than just a clothing brand — it is a journey of struggle, faith and never giving up."
+            <!-- Stylized Floating Quote with Gold Brand Accent -->
+            <p class="text-sm sm:text-lg md:text-xl font-serif italic text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-relaxed max-w-2xl mx-auto">
+              "<strong class="text-[#D4B270] font-serif not-italic font-semibold drop-shadow-sm">Pehnava Wale Bhaiya</strong> is more than just a clothing brand — it is a journey of struggle, faith and never giving up."
             </p>
+
+            <!-- Subtle Gold Gradient Accent Line -->
+            <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#D4B270] to-transparent mx-auto mt-2.5 opacity-80"></div>
           </div>
 
-          <!-- Achievement Statistics Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto pt-4">
+          <!-- Achievement Statistics Grid (Single Row on Mobile & Desktop) -->
+          <div class="grid grid-cols-3 gap-1.5 sm:gap-6 max-w-4xl mx-auto w-full pt-3 sm:pt-4">
             <!-- Stat 1: Instagram Followers -->
-            <div class="bg-[#0E4543]/90 backdrop-blur-md p-5 rounded-2xl border border-[#B89452]/40 shadow-lg hover:border-[#D4B270] transition-all duration-300 group flex items-center gap-4 text-left">
-              <div class="w-12 h-12 rounded-xl bg-[#155E5B] text-[#D4B270] flex items-center justify-center shrink-0 border border-[#B89452]/30 group-hover:scale-105 transition-transform">
-                <app-icon name="instagram" [size]="24"></app-icon>
+            <div class="bg-[#092B2A]/60 backdrop-blur-md p-2 sm:p-5 rounded-xl sm:rounded-2xl border border-[#B89452]/40 shadow-lg hover:border-[#D4B270] transition-all duration-300 group flex flex-col sm:flex-row items-center justify-center sm:justify-start text-center sm:text-left gap-1 sm:gap-4">
+              <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#155E5B]/80 text-[#D4B270] flex items-center justify-center shrink-0 border border-[#B89452]/40 group-hover:scale-105 transition-transform">
+                <app-icon name="instagram" [size]="16" customClass="sm:w-[22px] sm:h-[22px]"></app-icon>
               </div>
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold text-white font-sans tracking-tight">50K+</div>
-                <div class="text-xs uppercase tracking-wider text-[#DDEFE6]/90 font-medium">Instagram Followers</div>
+              <div class="min-w-0">
+                <div class="text-sm sm:text-3xl font-bold text-white font-sans tracking-tight drop-shadow-sm leading-tight">50K+</div>
+                <div class="text-[9px] sm:text-xs uppercase tracking-wider text-[#DDEFE6] font-medium drop-shadow-xs leading-tight mt-0.5 truncate">
+                  <span class="hidden sm:inline">Instagram </span>Followers
+                </div>
               </div>
             </div>
 
             <!-- Stat 2: Happy Customers -->
-            <div class="bg-[#0E4543]/90 backdrop-blur-md p-5 rounded-2xl border border-[#B89452]/40 shadow-lg hover:border-[#D4B270] transition-all duration-300 group flex items-center gap-4 text-left">
-              <div class="w-12 h-12 rounded-xl bg-[#155E5B] text-[#D4B270] flex items-center justify-center shrink-0 border border-[#B89452]/30 group-hover:scale-105 transition-transform">
-                <app-icon name="heart-handshake" [size]="24"></app-icon>
+            <div class="bg-[#092B2A]/60 backdrop-blur-md p-2 sm:p-5 rounded-xl sm:rounded-2xl border border-[#B89452]/40 shadow-lg hover:border-[#D4B270] transition-all duration-300 group flex flex-col sm:flex-row items-center justify-center sm:justify-start text-center sm:text-left gap-1 sm:gap-4">
+              <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#155E5B]/80 text-[#D4B270] flex items-center justify-center shrink-0 border border-[#B89452]/40 group-hover:scale-105 transition-transform">
+                <app-icon name="heart-handshake" [size]="16" customClass="sm:w-[22px] sm:h-[22px]"></app-icon>
               </div>
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold text-white font-sans tracking-tight">10K+</div>
-                <div class="text-xs uppercase tracking-wider text-[#DDEFE6]/90 font-medium">Happy Customers</div>
+              <div class="min-w-0">
+                <div class="text-sm sm:text-3xl font-bold text-white font-sans tracking-tight drop-shadow-sm leading-tight">100K+</div>
+                <div class="text-[9px] sm:text-xs uppercase tracking-wider text-[#DDEFE6] font-medium drop-shadow-xs leading-tight mt-0.5 truncate">
+                  <span class="hidden sm:inline">Happy </span>Customers
+                </div>
               </div>
             </div>
 
             <!-- Stat 3: Clothing Categories -->
-            <div class="bg-[#0E4543]/90 backdrop-blur-md p-5 rounded-2xl border border-[#B89452]/40 shadow-lg hover:border-[#D4B270] transition-all duration-300 group flex items-center gap-4 text-left">
-              <div class="w-12 h-12 rounded-xl bg-[#155E5B] text-[#D4B270] flex items-center justify-center shrink-0 border border-[#B89452]/30 group-hover:scale-105 transition-transform">
-                <app-icon name="shirt" [size]="24"></app-icon>
+            <div class="bg-[#092B2A]/60 backdrop-blur-md p-2 sm:p-5 rounded-xl sm:rounded-2xl border border-[#B89452]/40 shadow-lg hover:border-[#D4B270] transition-all duration-300 group flex flex-col sm:flex-row items-center justify-center sm:justify-start text-center sm:text-left gap-1 sm:gap-4">
+              <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#155E5B]/80 text-[#D4B270] flex items-center justify-center shrink-0 border border-[#B89452]/40 group-hover:scale-105 transition-transform">
+                <app-icon name="shirt" [size]="16" customClass="sm:w-[22px] sm:h-[22px]"></app-icon>
               </div>
-              <div>
-                <div class="text-2xl sm:text-3xl font-bold text-white font-sans tracking-tight">20+</div>
-                <div class="text-xs uppercase tracking-wider text-[#DDEFE6]/90 font-medium">Clothing Categories</div>
+              <div class="min-w-0">
+                <div class="text-sm sm:text-3xl font-bold text-white font-sans tracking-tight drop-shadow-sm leading-tight">20+</div>
+                <div class="text-[9px] sm:text-xs uppercase tracking-wider text-[#DDEFE6] font-medium drop-shadow-xs leading-tight mt-0.5 truncate">
+                  <span class="hidden sm:inline">Clothing </span>Categories
+                </div>
               </div>
             </div>
           </div>
@@ -86,7 +101,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
 
       <!-- 2. Main Story & Founder Journey -->
       <section class="py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20">
             <!-- Left: Visual Frame -->
             <div class="lg:col-span-5 relative" data-reveal>
@@ -94,12 +109,12 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                 <div class="rounded-[32px] overflow-hidden bg-[#0E4543] border-2 border-[#B89452]/50 shadow-2xl p-2.5 sm:p-3">
                   <div class="rounded-[24px] overflow-hidden aspect-[4/5] bg-[#092B2A]">
                     <img
-                      src="assets/store/store-01.webp"
-                      alt="Pehnava Wale Bhaiya Boutique Store Ajmer"
+                      src="assets/gallery/founder.jpeg"
+                      alt="Pehnava Founder & Visionary Ritik Soni"
                       width="750"
                       height="1000"
                       loading="eager"
-                      class="w-full h-full object-cover img-luxury-hover"
+                      class="w-full h-full object-cover object-center img-luxury-hover"
                     />
                   </div>
                 </div>
@@ -335,21 +350,21 @@ import { WhatsAppService } from '../../services/whatsapp.service';
   `
 })
 export class AboutComponent implements OnInit {
-  private readonly seo = inject(SeoService);
-  private readonly schema = inject(SchemaService);
-  readonly whatsAppService = inject(WhatsAppService);
+    private readonly seo = inject(SeoService);
+    private readonly schema = inject(SchemaService);
+    readonly whatsAppService = inject(WhatsAppService);
 
-  ngOnInit(): void {
-    this.seo.setMeta({
-      title: 'Our Story | Pehnava Wale Bhaiya - Founder Ritik Soni',
-      description: 'Discover the inspiring story of Pehnava Wale Bhaiya & founder Ritik Soni. From a humble family business in Ajmer to empowering thousands of women with affordable, high-quality ethnic fashion.',
-      url: '/about',
-    });
+    ngOnInit(): void {
+        this.seo.setMeta({
+            title: 'Our Story | Pehnava Wale Bhaiya - Founder Ritik Soni',
+            description: 'Discover the inspiring story of Pehnava Wale Bhaiya & founder Ritik Soni. From a humble family business in Ajmer to empowering thousands of women with affordable, high-quality ethnic fashion.',
+            url: '/about',
+        });
 
-    this.schema.injectBreadcrumbSchema([
-      { name: 'Home', url: '/' },
-      { name: 'About Us', url: '/about' },
-    ]);
-  }
+        this.schema.injectBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'About Us', url: '/about' },
+        ]);
+    }
 }
 

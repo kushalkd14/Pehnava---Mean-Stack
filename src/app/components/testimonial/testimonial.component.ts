@@ -12,7 +12,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
   template: `
     <section class="testimonial-marquee py-16 sm:py-24 bg-[#F0F7F3] relative overflow-hidden">
       <!-- Section Header -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mb-12 sm:mb-16">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 text-center max-w-3xl mb-12 sm:mb-16">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F3] text-[#155E5B] text-xs font-bold uppercase tracking-[0.25em] mb-4 border border-[#AFCFC0] shadow-xs">
           <app-icon name="sparkles" [size]="13" customClass="text-[#B89452]"></app-icon>
           <span>Customer Stories</span>

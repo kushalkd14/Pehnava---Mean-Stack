@@ -5,10 +5,10 @@ import { Store } from '../../models/catalog.models';
 import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config/business';
 
 @Component({
-  selector: 'app-visit-us',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-visit-us',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section id="visit-us" class="py-20 lg:py-28 gradient-mint-sage border-t border-[#AFCFC0] relative overflow-hidden">
       <!-- Decorative Accents -->
       <div class="absolute top-0 right-0 w-96 h-96 bg-[#FAF8F3] rounded-full blur-3xl opacity-60 pointer-events-none"></div>
@@ -46,7 +46,7 @@ import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config
                     {{ store?.fullAddress || businessConfig.fullAddress }}
                   </p>
                   <p class="text-sm text-[#71847B] mt-1 font-sans font-normal">
-                    Nagra, Ajmer, Rajasthan – 305007
+                    Nagra, Ajmer, Rajasthan – 305001
                   </p>
                 </div>
               </div>
@@ -123,7 +123,7 @@ import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config
                   <app-icon name="check-circle-2" [size]="18" customClass="text-[#155E5B] shrink-0 mt-0.5"></app-icon>
                   <div>
                     <h4 class="text-sm font-serif font-semibold text-[#155E5B]">Curated Women's Fashion Racks</h4>
-                    <p class="text-sm text-[#71847B] font-normal leading-relaxed">Distinct collections of daily Kurtis, Cotton suits, Co-Ord sets, Utility cargos, and festive ensembles.</p>
+                    <p class="text-sm text-[#71847B] font-normal leading-relaxed">Distinct collections of daily Kurtis, Cotton suits, Co-Ord sets, Bottom wear, and festive ensembles.</p>
                   </div>
                 </div>
 
@@ -167,17 +167,17 @@ import { BUSINESS_CONFIG, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../../config
   `
 })
 export class VisitUsComponent {
-  @Input() store: Store | null = null;
-  @Output() openWhatsApp = new EventEmitter<void>();
+    @Input() store: Store | null = null;
+    @Output() openWhatsApp = new EventEmitter<void>();
 
-  readonly businessConfig = BUSINESS_CONFIG;
+    readonly businessConfig = BUSINESS_CONFIG;
 
-  onWhatsAppClick(event: MouseEvent): void {
-    event.preventDefault();
-    this.openWhatsApp.emit();
-  }
+    onWhatsAppClick(event: MouseEvent): void {
+        event.preventDefault();
+        this.openWhatsApp.emit();
+    }
 
-  getStoreVisitWhatsAppUrl(): string {
-    return getWhatsAppUrl(WHATSAPP_MESSAGES.storeVisit);
-  }
+    getStoreVisitWhatsAppUrl(): string {
+        return getWhatsAppUrl(WHATSAPP_MESSAGES.storeVisit);
+    }
 }

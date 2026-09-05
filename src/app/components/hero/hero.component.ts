@@ -32,7 +32,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
       </div>
 
       <!-- OVERLAY CONTENT (Minimal & Elegant Directly On Top of Banner Image) -->
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+      <div class="relative z-10 max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 w-full my-auto">
         <div class="max-w-3xl space-y-6" data-reveal>
           <!-- Physical Location Badge -->
           <div class="inline-flex items-center gap-2.5 px-4.5 py-1.5 rounded-full bg-[#000000]/50 backdrop-blur-md border border-[#AFCFC0]/40 text-[#DDEFE6] text-xs font-semibold tracking-wide shadow-lg">

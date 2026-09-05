@@ -20,7 +20,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
           : 'bg-[#FAF8F3]/90 sm:bg-[#FAF8F3]/80 border-b border-[#D5D8D3]/40'
       "
     >
-      <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="flex items-center justify-between gap-2 sm:gap-6">
           <!-- Left: Mobile Menu Toggle & Brand Logo -->
           <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">

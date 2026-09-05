@@ -10,10 +10,10 @@ import { WhatsAppService } from '../../services/whatsapp.service';
 import { Collection } from '../../models/catalog.models';
 
 @Component({
-  selector: 'app-collections-page',
-  standalone: true,
-  imports: [CommonModule, IconComponent, CollectionCardComponent],
-  template: `
+    selector: 'app-collections-page',
+    standalone: true,
+    imports: [CommonModule, IconComponent, CollectionCardComponent],
+    template: `
     <main class="pt-24 pb-16 sm:pt-28 bg-[#FAF8F3]">
       <!-- Collections Hero Banner -->
       <section class="py-12 sm:py-16 bg-[#F3EEE4] border-b border-[#D5D8D3]">
@@ -25,14 +25,14 @@ import { Collection } from '../../models/catalog.models';
             Our Primary Women's Collections
           </h1>
           <p class="text-sm sm:text-base text-[#71847B] leading-relaxed">
-            Browse through our 11 primary women's edits — Premium & Short Kurtis, Pure Cotton Sets, Casual & Heavy Suits, Co-Ord Sets, Utility Cargos, Oversized Tees, Modern Grace & Festive drops.
+            Browse through our primary women's edits — Short Kurtis, Casual & Heavy Suits, Co-Ord Sets, Bottom Wear, T-Shirts, & Festive drops.
           </p>
         </div>
       </section>
 
       <!-- Category Filter Pills -->
       <section class="py-8 bg-white border-b border-[#D5D8D3] sticky top-16 z-30 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
             @for (cat of filterCategories; track cat) {
               <button
@@ -49,7 +49,7 @@ import { Collection } from '../../models/catalog.models';
 
       <!-- Collections Grid -->
       <section class="py-16 sm:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @for (item of filteredCollections(); track item.id) {
               <app-collection-card [item]="item"></app-collection-card>
@@ -80,53 +80,53 @@ import { Collection } from '../../models/catalog.models';
   `
 })
 export class CollectionsComponent implements OnInit {
-  private readonly catalog = inject(CatalogService);
-  private readonly seo = inject(SeoService);
-  private readonly schema = inject(SchemaService);
-  readonly whatsAppService = inject(WhatsAppService);
+    private readonly catalog = inject(CatalogService);
+    private readonly seo = inject(SeoService);
+    private readonly schema = inject(SchemaService);
+    readonly whatsAppService = inject(WhatsAppService);
 
-  readonly filterCategories = [
-    'All',
-    'Premium Kurtis',
-    'Short Kurtis',
-    'Cotton Collection',
-    'Casual Suits',
-    'Heavy Fancy Suits',
-    'Co-Ord Sets',
-    'Cargo Pants',
-    'Oversized T-Shirts',
-    'Modern Grace',
-    'Festive Collection',
-    'New Arrivals',
-  ];
+    readonly filterCategories = [
+        'All',
+        // 'Premium Kurtis',
+        'Short Kurtis',
+        // 'Cotton Collection',
+        'Casual Suits',
+        'Heavy Fancy Suits',
+        'Co-Ord Sets',
+        'Bottom Wear',
+        'T-Shirts',
+        // 'Modern Grace',
+        'Festive Collection',
+        'New Arrivals',
+    ];
 
-  selectedCategory = signal<string>('All');
-  collections = signal<Collection[]>([]);
+    selectedCategory = signal<string>('All');
+    collections = signal<Collection[]>([]);
 
-  filteredCollections = computed(() => {
-    const cat = this.selectedCategory();
-    const list = this.collections();
-    if (cat === 'All') return list;
-    return list.filter(
-      (item) => item.name.toLowerCase().includes(cat.toLowerCase()) || item.tag.toLowerCase().includes(cat.toLowerCase()) || item.subtitle.toLowerCase().includes(cat.toLowerCase())
-    );
-  });
-
-  ngOnInit(): void {
-    this.seo.setMeta({
-      title: 'Women’s Boutique Collections | Premium Kurtis, Suits, Co-Ords & Cargos',
-      description: 'Explore Pehnava RJ01’s primary women’s collections: Premium Kurtis, Short Kurtis, Cotton Suits, Heavy Fancy Suits, Co-Ord Sets, Cargos & Tees in Ajmer.',
-      url: '/collections',
+    filteredCollections = computed(() => {
+        const cat = this.selectedCategory();
+        const list = this.collections();
+        if (cat === 'All') return list;
+        return list.filter(
+            (item) => item.name.toLowerCase().includes(cat.toLowerCase()) || item.tag.toLowerCase().includes(cat.toLowerCase()) || item.subtitle.toLowerCase().includes(cat.toLowerCase())
+        );
     });
 
-    this.schema.injectBreadcrumbSchema([
-      { name: 'Home', url: '/' },
-      { name: 'Collections', url: '/collections' },
-    ]);
+    ngOnInit(): void {
+        this.seo.setMeta({
+            title: 'Women’s Boutique Collections | Premium Kurtis, Suits, Co-Ords & Bottom Wear',
+            description: 'Explore Pehnava RJ01’s primary women’s collections: Short Kurtis, Casual Suits, Heavy Fancy Suits, Co-Ord Sets, Bottom Wear & Tees in Ajmer.',
+            url: '/collections',
+        });
 
-    this.catalog.collections().subscribe((res) => {
-      const requiredCollections: Collection[] = COLLECTIONS_DATA;
-      this.collections.set(res && res.length >= 6 ? res : requiredCollections);
-    });
-  }
+        this.schema.injectBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Collections', url: '/collections' },
+        ]);
+
+        this.catalog.collections().subscribe((res) => {
+            const requiredCollections: Collection[] = COLLECTIONS_DATA;
+            this.collections.set(res && res.length >= 6 ? res : requiredCollections);
+        });
+    }
 }

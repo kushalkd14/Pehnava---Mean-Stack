@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 
 export interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
+    id: string;
+    question: string;
+    answer: string;
 }
 
 @Component({
-  selector: 'app-faq',
-  standalone: true,
-  imports: [CommonModule, IconComponent],
-  template: `
+    selector: 'app-faq',
+    standalone: true,
+    imports: [CommonModule, IconComponent],
+    template: `
     <section id="faq-section" class="py-16 sm:py-20 bg-[#FAF8F3] relative overflow-hidden">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-xl mx-auto mb-12">
@@ -63,37 +63,37 @@ export interface FaqItem {
   `
 })
 export class FaqComponent {
-  openId = signal<string>('faq-1');
+    openId = signal<string>('faq-1');
 
-  readonly faqs: FaqItem[] = [
-    {
-      id: 'faq-1',
-      question: 'Where is Pehnava RJ01 boutique located?',
-      answer: 'Our boutique studio is located opposite Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305007.'
-    },
-    {
-      id: 'faq-2',
-      question: 'What clothing collections do you offer?',
-      answer: 'We offer exclusive Bridal Lehengas, Designer Sarees, Reception Gowns, Sangeet Outfits, Designer Anarkalis, Shararas, and Festive Ethnic Wear.'
-    },
-    {
-      id: 'faq-3',
-      question: 'How can I enquire or check outfit availability via WhatsApp?',
-      answer: 'Simply click any "Enquire on WhatsApp" button on our website. It will automatically populate the collection name and send a direct message to our WhatsApp team (+91 80057 85709).'
-    },
-    {
-      id: 'faq-4',
-      question: 'Do you offer custom fitting and alterations?',
-      answer: 'Yes! Our physical store in Ajmer offers personalized fitting, blouse custom alterations, and bridal consultation to ensure your outfit fits perfectly.'
-    },
-    {
-      id: 'faq-5',
-      question: 'What are your store operating hours?',
-      answer: 'We are open all 7 days a week from 11:00 AM to 9:00 PM.'
+    readonly faqs: FaqItem[] = [
+        {
+            id: 'faq-1',
+            question: 'Where is Pehnava RJ01 boutique located?',
+            answer: 'Our boutique studio is located opposite Holy Family Hospital, Mayo Link Road, near 9 No. Petrol Pump, Nagra, Ajmer, Rajasthan 305001.'
+        },
+        {
+            id: 'faq-2',
+            question: 'What clothing collections do you offer?',
+            answer: 'We offer exclusive Bridal Lehengas, Designer Sarees, Reception Gowns, Sangeet Outfits, Designer Anarkalis, Shararas, and Festive Ethnic Wear.'
+        },
+        {
+            id: 'faq-3',
+            question: 'How can I enquire or check outfit availability via WhatsApp?',
+            answer: 'Simply click any "Enquire on WhatsApp" button on our website. It will automatically populate the collection name and send a direct message to our WhatsApp team (+91 80057 85709).'
+        },
+        {
+            id: 'faq-4',
+            question: 'Do you offer custom fitting and alterations?',
+            answer: 'Yes! Our physical store in Ajmer offers personalized fitting, blouse custom alterations, and bridal consultation to ensure your outfit fits perfectly.'
+        },
+        {
+            id: 'faq-5',
+            question: 'What are your store operating hours?',
+            answer: 'We are open all 7 days a week from 11:00 AM to 9:00 PM.'
+        }
+    ];
+
+    toggle(id: string): void {
+        this.openId.set(this.openId() === id ? '' : id);
     }
-  ];
-
-  toggle(id: string): void {
-    this.openId.set(this.openId() === id ? '' : id);
-  }
 }

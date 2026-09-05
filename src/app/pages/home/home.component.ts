@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { HeroComponent } from '../../components/hero/hero.component';
-import { OfferBannerComponent } from '../../components/offer-banner/offer-banner.component';
 import { HighlightsStripComponent } from '../../components/highlights-strip/highlights-strip.component';
 import { CollectionCardComponent } from '../../components/collection-card/collection-card.component';
 import { ModernGraceSectionComponent } from '../../components/modern-grace-section/modern-grace-section.component';
@@ -27,7 +26,6 @@ import { Collection, Look } from '../../models/catalog.models';
     RouterLink,
     IconComponent,
     HeroComponent,
-    OfferBannerComponent,
     HighlightsStripComponent,
     CollectionCardComponent,
     ModernGraceSectionComponent,
@@ -43,16 +41,13 @@ import { Collection, Look } from '../../models/catalog.models';
       <!-- 1. Hero Editorial -->
       <app-hero></app-hero>
 
-      <!-- 2. Festive Offer Banner (Configurable via offers.config.ts) -->
-      <app-offer-banner></app-offer-banner>
-
-      <!-- 3. Live Highlights Strip -->
+      <!-- 2. Live Highlights Strip -->
       <app-highlights-strip></app-highlights-strip>
 
       <!-- 4. Shop by Collection (Main Categories Grid) -->
       <section id="collections" class="py-16 sm:py-24 bg-[#FAF8F3]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-14" data-reveal>
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div class="text-center max-w-4xl mx-auto mb-14" data-reveal>
             <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#DDEFE6] text-[#155E5B] text-xs font-bold uppercase tracking-[0.25em] border border-[#AFCFC0] mb-3">
               <app-icon name="sparkles" [size]="13" customClass="text-[#B89452]"></app-icon>
               <span>Women’s Ethnic Curation</span>
@@ -61,7 +56,7 @@ import { Collection, Look } from '../../models/catalog.models';
               Shop By Collection
             </h2>
             <p class="text-sm sm:text-base text-[#71847B] font-sans max-w-2xl mx-auto leading-relaxed">
-              Explore handcrafted Gota Patti Shararas, flared silk Anarkalis, pure Mulmul cotton suit sets, cargo pants, oversized tees, and modern co-ord edits.
+              Explore our curated boutique edits — Short Kurtis, Decent Printed Designer Suits, & Premium Cotton T-Shirts.
             </p>
             <app-boutique-divider></app-boutique-divider>
           </div>
@@ -86,8 +81,8 @@ import { Collection, Look } from '../../models/catalog.models';
 
       <!-- 5. New Arrivals (Latest Instagram Products) -->
       <section class="py-16 sm:py-24 bg-[#F3EEE4]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-14" data-reveal>
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div class="text-center max-w-4xl mx-auto mb-14" data-reveal>
             <span class="text-xs uppercase tracking-[0.25em] font-bold text-[#B8875A] block mb-2">
               Fresh In Store
             </span>
@@ -190,7 +185,10 @@ export class HomeComponent implements OnInit {
 
     this.schema.injectSchemas();
 
-    this.catalog.collections().subscribe((res) => (this.collections = res));
+    this.catalog.collections().subscribe((res) => {
+      const targetSlugs = ['short-kurtis', 'heavy-fancy-suits', 'tshirts'];
+      this.collections = res.filter((item) => targetSlugs.includes(item.slug));
+    });
     this.catalog.looks().subscribe((res) => (this.trendingLooks = res.slice(0, 6)));
   }
 }

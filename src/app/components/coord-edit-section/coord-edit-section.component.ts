@@ -13,7 +13,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
       <!-- Background Ambient Details -->
       <div class="absolute inset-0 bg-[radial-gradient(#AFCFC0_1px,transparent_1px)] [background-size:28px_28px] opacity-30 pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           <!-- Left Content -->
           <div class="lg:col-span-6 space-y-5 sm:space-y-6 order-2 lg:order-1">

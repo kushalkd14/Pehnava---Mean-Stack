@@ -9,7 +9,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
   imports: [CommonModule, IconComponent],
   template: `
     <section id="visit-store" class="py-16 sm:py-20 bg-[#FAF8F3] relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#B8875A]">
             Visit Store Location
@@ -90,7 +90,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
           <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-[#D5D8D3] shadow-sm min-h-[350px] lg:min-h-[450px] relative bg-[#F0F7F3]">
             <iframe
               title="Pehnava RJ01 Boutique Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.854082690467!2d74.6399!3d26.4499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbooDInMjkuNiJOIDc0wrAzOCcyMy42IkU!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.083!2d74.6468114!3d26.4366601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be7e7adb5f177%3A0xcdbb4c103fe8e719!2sPehnava!5e0!3m2!1sen!2sin!4v1725500000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style="border:0; min-height: 380px;"

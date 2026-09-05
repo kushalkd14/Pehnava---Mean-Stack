@@ -29,7 +29,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
           </h2>
 
           <p class="text-sm sm:text-base text-[#26332F]/80 max-w-2xl mx-auto font-sans font-normal leading-relaxed">
-            From traditional Gota Patti Shararas and Modal Silk Kurtis to modern Co-Ord sets, Utility Cargos, and Oversized Tees — curated exclusively for women.
+            From traditional Gota Patti Shararas and Modal Silk Kurtis to modern Co-Ord sets, Bottom Wear, and Oversized Tees — curated exclusively for women.
           </p>
         </div>
 
@@ -151,11 +151,11 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
                 <div class="flex items-center gap-2 mb-1">
                   <span class="w-1.5 h-1.5 rounded-full bg-[#D4B270]"></span>
                   <span class="text-[11px] uppercase tracking-[0.25em] text-[#DDEFE6] font-semibold">
-                    Co-Ords & Utility Wear
+                    Co-Ords & Bottom Wear
                   </span>
                 </div>
                 <p class="text-2xl sm:text-3xl font-serif font-medium text-white tracking-normal">
-                  Co-Ords & Utility Fits
+                  Co-Ords & Bottom Wear
                 </p>
               </div>
             </div>
@@ -167,19 +167,19 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
                     CONTEMPORARY FITS
                   </span>
                   <span class="w-1 h-1 rounded-full bg-[#B89452]"></span>
-                  <span class="text-xs text-[#71847B] font-medium">Co-Ords, Cargos & Tees</span>
+                  <span class="text-xs text-[#71847B] font-medium">Co-Ords, Bottom Wear & Tees</span>
                 </div>
                 <h3 class="text-2xl sm:text-3xl font-serif text-[#155E5B] mb-2 font-normal">
-                  Co-Ord Sets & Utility Cargos
+                  Co-Ord Sets & Bottom Wear
                 </h3>
                 <p class="text-sm text-[#71847B] leading-relaxed font-sans font-normal">
-                  Chic 3-piece cape sets, relaxed high-waist cargo pants, and oversized graphic cotton tees.
+                  Chic 3-piece cape sets, relaxed high-waist bottom wear, and oversized graphic cotton tees.
                 </p>
               </div>
 
               <div class="pt-4 border-t border-[#D5D8D3] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <span class="text-xs font-medium text-[#71847B] tracking-wide">
-                  Co-Ords • Utility Cargos • Oversized Tees
+                  Co-Ords • Bottom Wear • Oversized Tees
                 </span>
 
                 <a

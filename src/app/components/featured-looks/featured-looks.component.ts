@@ -151,11 +151,10 @@ export class FeaturedLooksComponent {
   readonly filterTabs = [
     { id: 'all', label: 'All Looks', accent: 'teal' },
     { id: 'premium-kurtis', label: 'Premium Kurtis', accent: 'mint' },
-    { id: 'cotton-collection', label: 'Cotton Collection', accent: 'emerald' },
     { id: 'heavy-fancy-suits', label: 'Heavy Fancy Suits', accent: 'rose' },
     { id: 'coord-sets', label: 'Co-Ord Sets', accent: 'terracotta' },
-    { id: 'cargo-pants', label: 'Cargo Pants', accent: 'wood' },
-    { id: 'oversized-tshirts', label: 'Oversized Tees', accent: 'gold' },
+    { id: 'bottom-wear', label: 'Bottom Wear', accent: 'wood' },
+    { id: 'tshirts', label: 'T-Shirts', accent: 'gold' },
   ];
 
   get filteredLooks(): Look[] {

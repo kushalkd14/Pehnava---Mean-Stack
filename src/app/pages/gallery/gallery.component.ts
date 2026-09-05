@@ -13,7 +13,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
     <main class="pt-24 pb-16 sm:pt-28 bg-[#FAF8F3]">
       <!-- Gallery Hero Banner -->
       <section class="py-12 sm:py-16 bg-[#F3EEE4] border-b border-[#D5D8D3]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 text-center max-w-3xl">
           <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#B8875A]">
             Visual Showcase
           </span>

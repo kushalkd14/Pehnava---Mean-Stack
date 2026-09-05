@@ -16,7 +16,7 @@ interface HighlightItem {
   imports: [CommonModule, IconComponent],
   template: `
     <section class="py-4 bg-[#FAF8F3] border-y border-[#AFCFC0]/60 relative z-20 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="flex items-center justify-between gap-3 sm:gap-4 overflow-x-auto no-scrollbar py-1">
           @for (item of highlights; track item.title) {
             <div

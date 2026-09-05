@@ -16,7 +16,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
       <div class="absolute top-0 left-1/3 w-96 h-96 bg-[#155E5B]/40 rounded-full blur-[100px] pointer-events-none"></div>
       <div class="absolute bottom-0 right-10 w-80 h-80 bg-[#B89452]/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-10 pb-16 border-b border-[#155E5B]">
           <!-- Brand Column -->
           <div class="lg:col-span-5 flex flex-col items-start">

@@ -13,7 +13,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
       <!-- Ambient Watermark -->
       <div class="absolute inset-0 bg-[radial-gradient(#AFCFC0_1px,transparent_1px)] [background-size:32px_32px] opacity-25 pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <!-- Left Spotlight Image -->
           <div class="lg:col-span-6 relative">

@@ -19,7 +19,7 @@ export interface InstagramCardItem {
       <!-- Background Soft Ambient Glow -->
       <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#DDEFE6]/40 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <!-- Top Section Header & Follow CTA -->
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div class="max-w-2xl">
@@ -33,7 +33,7 @@ export interface InstagramCardItem {
             </h2>
 
             <p class="text-xs sm:text-sm text-[#71847B] font-sans leading-relaxed">
-              Official Boutique in Ajmer • Bridal Lehengas • Designer Sarees • Co-Ord Sets • Premium Kurtis • Festive Collections
+              Official Boutique in Ajmer • Casual Suits • Short Kurtis • Co-Ord Sets • Premium Kurtis • Festive Drops
             </p>
           </div>
 
@@ -108,38 +108,38 @@ export class InstagramShowcaseComponent {
     {
       id: 'ig-1',
       image: 'assets/instagram/insta-01.webp',
-      tag: 'Bridal Lehengas',
-      alt: 'Pehnava Official Bridal Lehengas & Royal Zardosi Outfits',
+      tag: 'Casual Suits',
+      alt: 'Pehnava Official Pastel Straight Cut & Designer Suits',
     },
     {
       id: 'ig-2',
       image: 'assets/instagram/insta-02.webp',
-      tag: 'Designer Sarees',
-      alt: 'Pehnava Designer Organza & Silk Sarees Collection',
+      tag: 'Short Kurtis',
+      alt: 'Pehnava Jaipuri Hand-Block Printed Short Kurtis',
     },
     {
       id: 'ig-3',
       image: 'assets/instagram/insta-03.webp',
       tag: 'Festive Drops',
-      alt: 'Pehnava Heavy Gota Patti Shararas & Festive Suits',
+      alt: 'Pehnava Refined Sharara & Light Festive Suit Collection',
     },
     {
       id: 'ig-4',
       image: 'assets/instagram/insta-04.webp',
       tag: 'Co-Ord Edits',
-      alt: 'Pehnava Botanical Tunic & Wide-Leg Co-Ord Sets',
+      alt: 'Pehnava Botanical Tunic & Matching Flared Pant Co-Ord Sets',
     },
     {
       id: 'ig-5',
       image: 'assets/instagram/insta-05.webp',
       tag: 'Premium Kurtis',
-      alt: 'Pehnava Modal Silk & Chanderi Flared Kurtis',
+      alt: 'Pehnava Modal Silk & Chanderi Flared Anarkali Kurtis',
     },
     {
       id: 'ig-6',
       image: 'assets/instagram/insta-06.webp',
-      tag: 'Cotton Sets',
-      alt: 'Pehnava Pure Mulmul Cotton Daily Suit Ensembles',
+      tag: 'Casual Wear',
+      alt: 'Pehnava Minimalist Cotton Tees & Utility Bottom Wear',
     },
   ];
 }

@@ -12,7 +12,7 @@ import { BoutiqueDividerComponent } from '../../shared/components/boutique-divid
       <!-- Background Decorative Touches -->
       <div class="absolute inset-0 bg-[radial-gradient(#AFCFC0_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-14" data-reveal>
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F3] border border-[#AFCFC0] text-[#155E5B] text-xs font-bold uppercase tracking-[0.25em] mb-4 shadow-xs">

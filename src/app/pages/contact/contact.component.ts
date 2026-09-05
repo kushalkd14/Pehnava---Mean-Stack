@@ -31,7 +31,7 @@ import { BUSINESS_CONFIG } from '../../config/business';
 
       <!-- Contact Info Cards & Interactive Enquiry Form -->
       <section class="py-16 sm:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <!-- Left Info Cards -->
             <div class="lg:col-span-5 space-y-6">
@@ -111,12 +111,11 @@ import { BUSINESS_CONFIG } from '../../config/business';
                     name="category"
                     class="w-full p-3.5 rounded-2xl bg-[#FAF8F3] border border-[#D5D8D3] text-sm focus:outline-hidden focus:border-[#155E5B]"
                   >
-                    <option value="Bridal Wear">Bridal Wear</option>
-                    <option value="Designer Lehenga">Designer Lehenga</option>
-                    <option value="Sarees">Designer Sarees</option>
-                    <option value="Reception Gowns">Reception Gowns</option>
-                    <option value="Anarkali Suits">Anarkali & Designer Suits</option>
-                    <option value="Store Appointment">Store Appointment Visit</option>
+                    <option value="Co-Ord Set">Co-Ord Set</option>
+                    <option value="Casual Cloths">Casual Cloths</option>
+                    <option value="Printed Kurti">Printed Kurti</option>
+                    <option value="Other">Other</option>
+                    <option value="Store Visit">Store Visit</option>
                   </select>
                 </div>
 
@@ -157,7 +156,7 @@ export class ContactComponent implements OnInit {
   readonly businessConfig = BUSINESS_CONFIG;
 
   name = '';
-  category = 'Bridal Wear';
+  category = 'Co-Ord Set';
   messageText = '';
 
   ngOnInit(): void {
