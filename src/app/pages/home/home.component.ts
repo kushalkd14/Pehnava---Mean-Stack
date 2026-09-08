@@ -54,7 +54,7 @@ import { Collection, Look } from '../../models/catalog.models';
               Shop By Collection
             </h2>
             <p class="text-sm sm:text-base text-[#71847B] font-sans max-w-2xl mx-auto leading-relaxed">
-              Explore our curated boutique edits — Short Kurtis, Decent Printed Designer Suits, & Premium Cotton T-Shirts.
+              Explore our complete collection — Short & Straight Kurtis, Casual, Anaarkali, Aline & Fancy Suits, Bottom Wear, Baggy T-Shirts & Festive Suits.
             </p>
             <app-boutique-divider></app-boutique-divider>
           </div>
@@ -70,7 +70,7 @@ import { Collection, Look } from '../../models/catalog.models';
               routerLink="/collections"
               class="w-full sm:w-auto btn-pehnava-secondary inline-flex items-center justify-center gap-2.5 px-4 sm:px-9 py-3.5 sm:py-4 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider cursor-pointer shadow-sm active:scale-98 text-center whitespace-normal leading-snug max-w-full"
             >
-              <span class="max-w-full text-center">Explore All 11 Women’s Collections</span>
+              <span class="max-w-full text-center">Explore All 9 Women’s Collections</span>
               <app-icon name="arrow-right" [size]="15" customClass="shrink-0"></app-icon>
             </a>
           </div>
@@ -181,8 +181,7 @@ export class HomeComponent implements OnInit {
         this.schema.injectSchemas();
 
         this.catalog.collections().subscribe((res) => {
-            const targetSlugs = ['short-kurtis', 'heavy-fancy-suits', 'tshirts'];
-            this.collections = res.filter((item) => targetSlugs.includes(item.slug));
+            this.collections = res;
         });
         this.catalog.looks().subscribe((res) => (this.trendingLooks = res.slice(0, 3)));
     }

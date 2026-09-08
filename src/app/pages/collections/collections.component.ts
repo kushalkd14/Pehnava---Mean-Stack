@@ -25,7 +25,7 @@ import { Collection } from '../../models/catalog.models';
             Our Primary Women's Collections
           </h1>
           <p class="text-sm sm:text-base text-[#71847B] leading-relaxed">
-            Browse through our primary women's edits — Short Kurtis, Casual & Heavy Suits, Co-Ord Sets, Bottom Wear, T-Shirts, & Festive drops.
+            Browse through our complete collection — Short & Straight Kurtis, Casual, Anaarkali, Aline & Fancy Suits, Bottom Wear (Linen, Korean, Cargo & Wide Leg Pants), Baggy T-Shirts, & Festive Suits.
           </p>
         </div>
       </section>
@@ -88,13 +88,14 @@ export class CollectionsComponent implements OnInit {
     readonly filterCategories = [
         'All',
         'Short Kurtis',
+        'Straight Kurtis',
         'Casual Suits',
-        'Heavy Fancy Suits',
-        'Co-Ord Sets',
+        'Anaarkali Suits',
+        'Aline Suits',
+        'Fancy Suits',
         'Bottom Wear',
-        'T-Shirts',
-        'Festive Collection',
-        'New Arrivals',
+        'Baggy T-Shirts',
+        'Festive Suits',
     ];
 
     selectedCategory = signal<string>('All');
@@ -111,8 +112,8 @@ export class CollectionsComponent implements OnInit {
 
     ngOnInit(): void {
         this.seo.setMeta({
-            title: "Women's Ethnic Wear Collections in Ajmer | Pehnava",
-            description: "Explore Pehnava’s primary women’s collections in Ajmer: Short Kurtis, Decent Printed Casual Suits, Heavy Fancy Suits, Co-Ord Sets, Bottom Wear & Tees.",
+            title: "Women's Ethnic Fashion Collections in Ajmer | Pehnava",
+            description: "Explore Pehnava’s complete collection of 9 women’s fashion articles in Ajmer: Short Kurtis, Straight Kurtis, Casual Suits, Anaarkali Suits, Aline Suits, Fancy Suits, Bottom Wear (Linen, Korean, Cargo, Wide Leg Pants), Baggy T-Shirts, & Festive Suits.",
             url: '/collections',
         });
 
@@ -123,7 +124,7 @@ export class CollectionsComponent implements OnInit {
 
         this.catalog.collections().subscribe((res) => {
             const requiredCollections: Collection[] = COLLECTIONS_DATA;
-            this.collections.set(res && res.length >= 6 ? res : requiredCollections);
+            this.collections.set(requiredCollections);
         });
     }
 }

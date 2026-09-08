@@ -19,42 +19,42 @@ import { WhatsAppService } from '../../services/whatsapp.service';
           <div class="lg:col-span-6 space-y-5 sm:space-y-6 order-2 lg:order-1">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F3] border border-[#AFCFC0] text-[#155E5B] text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] shadow-xs">
               <app-icon name="sparkles" [size]="13" customClass="text-[#B89452] shrink-0"></app-icon>
-              <span>Gen-Z & Contemporary Favorite</span>
+              <span>Royal Flared Signature</span>
             </div>
 
             <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif text-[#155E5B] leading-tight">
-              The Co-Ord Set Edit
+              The Anaarkali Suit Edit
             </h2>
 
             <p class="text-xs sm:text-base text-[#71847B] font-sans leading-relaxed">
-              Effortless elegance in matching 2-piece and 3-piece ethnic fusion sets. Featuring botanical prints, fluid wide-leg trousers, button-down tunic tops, and lightweight breathable fabrics designed for casual brunches, vacations, and festive gatherings.
+              Effortless royal grandeur in flared silk Anaarkali suit sets. Featuring intricate neck embroidery, soft flowing drapes, delicate scalloped organza dupattas, and rich festive hues tailored for celebrations and special occasions.
             </p>
 
             <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
               <div class="bg-[#FAF8F3] p-3.5 sm:p-4 rounded-2xl border border-[#D5D8D3]">
-                <span class="text-sm sm:text-lg font-serif font-bold text-[#155E5B] block">Ready-to-Wear</span>
-                <span class="text-[11px] sm:text-xs text-[#71847B]">Pre-matched tunic & flared trousers</span>
+                <span class="text-sm sm:text-lg font-serif font-bold text-[#155E5B] block">Flared Royal Silhouette</span>
+                <span class="text-[11px] sm:text-xs text-[#71847B]">Pure Modal silk with scalloped dupatta</span>
               </div>
               <div class="bg-[#FAF8F3] p-3.5 sm:p-4 rounded-2xl border border-[#D5D8D3]">
-                <span class="text-sm sm:text-lg font-serif font-bold text-[#B8875A] block">All-Day Comfort</span>
-                <span class="text-[11px] sm:text-xs text-[#71847B]">Ultra-soft Modal silk & Rayon cotton</span>
+                <span class="text-sm sm:text-lg font-serif font-bold text-[#B8875A] block">Boutique Tailoring</span>
+                <span class="text-[11px] sm:text-xs text-[#71847B]">Custom fitting & private trial in Ajmer</span>
               </div>
             </div>
 
             <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
-                (click)="whatsAppService.openWhatsApp('Co-Ord Set Collection')"
+                (click)="whatsAppService.openWhatsApp('Anaarkali Suit Collection')"
                 class="w-full sm:w-auto btn-pehnava-primary px-5 sm:px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2.5 cursor-pointer shadow-md active:scale-98 text-center"
               >
                 <app-icon name="whatsapp" [size]="17" customClass="text-[#25D366] shrink-0"></app-icon>
-                <span>Enquire Co-Ord Sets</span>
+                <span>Enquire Anaarkali Suits</span>
               </button>
 
               <a
-                routerLink="/collections/coord-sets"
+                routerLink="/collections/anarkali-suits"
                 class="w-full sm:w-auto btn-pehnava-secondary px-5 sm:px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center gap-2 cursor-pointer text-center"
               >
-                <span>Explore Co-Ords</span>
+                <span>Explore Anaarkalis</span>
                 <app-icon name="arrow-right" [size]="14" customClass="shrink-0"></app-icon>
               </a>
             </div>
@@ -64,8 +64,8 @@ import { WhatsAppService } from '../../services/whatsapp.service';
           <div class="lg:col-span-6 relative order-1 lg:order-2">
             <div class="rounded-3xl overflow-hidden aspect-[3/4] sm:aspect-[4/3] border-2 border-[#AFCFC0] shadow-xl bg-white relative group">
               <img
-                src="assets/collections/coord-sets.webp"
-                alt="Pehnava Co-Ord Sets Collection"
+                src="assets/collections/anarkali-suits.webp"
+                alt="Pehnava Anaarkali Suits Collection"
                 loading="lazy"
                 class="w-full h-full object-cover object-top img-luxury-hover"
               />
@@ -73,7 +73,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
               <div class="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 p-3 sm:p-4 rounded-2xl bg-[#FAF8F3]/95 backdrop-blur-md border border-[#AFCFC0] flex items-center justify-between text-[#155E5B]">
                 <div>
                   <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-[#B8875A] block">Signature Look</span>
-                  <span class="text-xs sm:text-sm font-serif font-bold">Botanical Ivory Co-Ord Set</span>
+                  <span class="text-xs sm:text-sm font-serif font-bold">Modal Silk Anaarkali Suit Set</span>
                 </div>
                 <span class="text-[10px] sm:text-xs font-bold text-[#155E5B] bg-[#DDEFE6] px-2.5 py-1 rounded-full">Boutique Exclusive</span>
               </div>

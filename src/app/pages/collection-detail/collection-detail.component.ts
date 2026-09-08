@@ -100,7 +100,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
               </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               @for (look of relatedLooks(); track look.id) {
                 <div class="bg-white rounded-2xl overflow-hidden border border-[#D5D8D3] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col">
                   <div class="aspect-[4/3] overflow-hidden bg-[#F0F7F3] relative">
@@ -157,8 +157,10 @@ export class CollectionDetailPageComponent implements OnInit {
             if (found) {
                 this.collection.set(found);
 
-                const looks = FEATURED_LOOKS_DATA.filter((l) => l.categorySlug === slug || l.category.toLowerCase().includes(found.name.toLowerCase().split(' ')[0]));
-                this.relatedLooks.set(looks.length ? looks : FEATURED_LOOKS_DATA.slice(0, 3));
+                const looks = FEATURED_LOOKS_DATA.filter(
+                    (l) => l.categorySlug === slug || l.category.toLowerCase() === found.name.toLowerCase()
+                );
+                this.relatedLooks.set(looks);
 
                 this.seo.setMeta({
                     title: `${found.name} Collection in Ajmer | Pehnava`,
