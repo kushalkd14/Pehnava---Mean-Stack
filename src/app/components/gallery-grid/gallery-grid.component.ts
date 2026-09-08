@@ -124,10 +124,10 @@ export class GalleryGridComponent {
         },
         {
             id: 'g-real-store-2',
-            title: 'Curated Cotton Suits & Bandhani Racks',
+            title: 'Pehnava Counter Staff & Bandhani Suits Rack',
             category: 'Store',
             image: 'assets/store/real-store-02.webp',
-            description: 'Stacked cotton suit sets, Bandhani dupattas, and daily wear ethnic Kurtis at Pehnava counter.',
+            description: 'Our boutique staff assisting customers with vibrant Bandhani dupattas and stacked cotton suit sets at Pehnava counter.',
         },
         {
             id: 'g-daily-suit-1',

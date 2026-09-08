@@ -54,12 +54,12 @@ import { Collection, Look } from '../../models/catalog.models';
               Shop By Collection
             </h2>
             <p class="text-sm sm:text-base text-[#71847B] font-sans max-w-2xl mx-auto leading-relaxed">
-              Explore our complete collection — Short & Straight Kurtis, Casual, Anaarkali, Aline & Fancy Suits, Bottom Wear, Baggy T-Shirts & Festive Suits.
+              Explore our featured curation — Short & Straight Kurtis and Anaarkali Suits.
             </p>
             <app-boutique-divider></app-boutique-divider>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             @for (item of collections; track item.id) {
               <app-collection-card [item]="item"></app-collection-card>
             }
@@ -70,7 +70,7 @@ import { Collection, Look } from '../../models/catalog.models';
               routerLink="/collections"
               class="w-full sm:w-auto btn-pehnava-secondary inline-flex items-center justify-center gap-2.5 px-4 sm:px-9 py-3.5 sm:py-4 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider cursor-pointer shadow-sm active:scale-98 text-center whitespace-normal leading-snug max-w-full"
             >
-              <span class="max-w-full text-center">Explore All 9 Women’s Collections</span>
+              <span class="max-w-full text-center">Explore Full Boutique Collection</span>
               <app-icon name="arrow-right" [size]="15" customClass="shrink-0"></app-icon>
             </a>
           </div>
@@ -180,8 +180,9 @@ export class HomeComponent implements OnInit {
 
         this.schema.injectSchemas();
 
+        const targetSlugs = ['short-kurtis', 'straight-kurtis', 'anarkali-suits'];
         this.catalog.collections().subscribe((res) => {
-            this.collections = res;
+            this.collections = res.filter((c) => targetSlugs.includes(c.slug));
         });
         this.catalog.looks().subscribe((res) => (this.trendingLooks = res.slice(0, 3)));
     }
