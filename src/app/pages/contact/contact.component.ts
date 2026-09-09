@@ -72,6 +72,37 @@ import { BUSINESS_CONFIG } from '../../config/business';
                 </div>
               </div>
 
+              <!-- Official YouTube & Instagram Social Card -->
+              <div class="bg-white p-6 rounded-3xl border border-[#D5D8D3] shadow-xs flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-[#FFE6E6] text-[#FF0000] flex items-center justify-center shrink-0">
+                  <app-icon name="youtube" [size]="22" customClass="text-[#FF0000]"></app-icon>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold uppercase tracking-wider text-[#155E5B] mb-1">Official YouTube & Instagram</h3>
+                  <p class="text-xs text-[#71847B] mb-2">Watch our boutique styling videos and daily outfit edits.</p>
+                  <div class="flex flex-wrap items-center gap-4 text-xs font-bold">
+                    <a
+                      [href]="businessConfig.youtubeUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-[#FF0000] hover:underline flex items-center gap-1.5"
+                    >
+                      <app-icon name="youtube" [size]="15" customClass="text-[#FF0000]"></app-icon>
+                      <span>{{ businessConfig.youtubeHandle }}</span>
+                    </a>
+                    <a
+                      [href]="businessConfig.instagramUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-[#C98F91] hover:underline flex items-center gap-1.5"
+                    >
+                      <app-icon name="instagram" [size]="15" customClass="text-[#C98F91]"></app-icon>
+                      <span>{{ businessConfig.instagramHandle }}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
               <!-- Instant WhatsApp Button -->
               <div class="pt-2">
                 <button

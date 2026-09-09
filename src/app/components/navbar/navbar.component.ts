@@ -42,7 +42,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
               aria-label="Pehnava Home"
             >
               <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#155E5B] p-0.5 shadow-xs flex items-center justify-center shrink-0">
-                <img src="pehnava-logo.png" alt="Pehnava" class="w-full h-full object-contain rounded-full" />
+                <img src="pehnava-logo.png" alt="Pehnava" width="36" height="36" class="w-full h-full object-contain rounded-full" />
               </div>
               <div class="flex flex-col">
                 <div class="inline-flex items-baseline gap-1">
@@ -174,7 +174,7 @@ import { WhatsAppService } from '../../services/whatsapp.service';
             <span>Connect on WhatsApp</span>
           </button>
 
-          <div class="flex items-center justify-between text-xs text-[#71847B] px-2">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-[#71847B] px-2">
             <a
               [href]="businessConfig.instagramUrl"
               target="_blank"
@@ -183,6 +183,15 @@ import { WhatsAppService } from '../../services/whatsapp.service';
             >
               <app-icon name="instagram" [size]="15" customClass="text-[#C98F91]"></app-icon>
               <span>{{ businessConfig.instagramHandle }}</span>
+            </a>
+            <a
+              [href]="businessConfig.youtubeUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-1.5 hover:text-[#FF0000] transition-colors"
+            >
+              <app-icon name="youtube" [size]="15" customClass="text-[#FF0000]"></app-icon>
+              <span>{{ businessConfig.youtubeHandle }}</span>
             </a>
             <a
               routerLink="/contact"

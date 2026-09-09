@@ -40,6 +40,10 @@ import { CommonModule } from '@angular/common';
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
           <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
         }
+        @case ('youtube') {
+          <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17Z"></path>
+          <polygon points="10 15 15 12 10 9 10 15" fill="currentColor"></polygon>
+        }
         @case ('map-pin') {
           <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
           <circle cx="12" cy="10" r="3"></circle>

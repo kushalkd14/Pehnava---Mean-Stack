@@ -19,6 +19,8 @@ import { WhatsAppService } from '../../services/whatsapp.service';
           src="assets/hero/hero-main.webp"
           srcSet="assets/hero/hero-main-600.webp 600w, assets/hero/hero-main-1200.webp 1200w, assets/hero/hero-main-1920.webp 1920w, assets/hero/hero-main.webp 3840w"
           sizes="100vw"
+          width="1920"
+          height="1080"
           alt="Pehnava Luxury Boutique Showcase"
           fetchPriority="high"
           loading="eager"

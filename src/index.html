@@ -32,12 +32,14 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#155E5B" />
 
-    <!-- Google Fonts: Poppins (Brand Font) -->
+    <!-- Google Fonts & Preloads for Sub-Second LCP & Zero CLS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
-        rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+
+    <!-- Hero Image Preload for Immediate LCP Paint -->
+    <link rel="preload" as="image" href="assets/hero/hero-main-600.webp" imagesrcset="assets/hero/hero-main-600.webp 600w, assets/hero/hero-main-1200.webp 1200w, assets/hero/hero-main-1920.webp 1920w" imagesizes="100vw" fetchpriority="high" />
 </head>
 
 <body

@@ -52,6 +52,16 @@ import { WhatsAppService } from '../../services/whatsapp.service';
                 <app-icon name="instagram" [size]="17" customClass="text-[#C98F91]"></app-icon>
               </a>
 
+              <a
+                [href]="businessConfig.youtubeUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-[#0E4543] border border-[#B89452]/40 text-[#DDEFE6] hover:text-white hover:bg-[#FF0000] flex items-center justify-center transition-colors shadow-sm"
+                aria-label="Watch Pehnava Wale Bhaiya on YouTube"
+              >
+                <app-icon name="youtube" [size]="17" customClass="text-[#FF0000]"></app-icon>
+              </a>
+
               <button
                 (click)="onWhatsAppEnquire()"
                 aria-label="Chat with Pehnava on WhatsApp"

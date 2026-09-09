@@ -9,28 +9,28 @@ import { FloatingWhatsAppComponent } from './components/floating-whatsapp/floati
 import { WhatsAppModalComponent } from './components/whatsapp-modal/whatsapp-modal.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    SplashScreenComponent,
-    NavbarComponent,
-    FooterComponent,
-    FloatingWhatsAppComponent,
-    WhatsAppModalComponent,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: 'app-root',
+    standalone: true,
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        SplashScreenComponent,
+        NavbarComponent,
+        FooterComponent,
+        FloatingWhatsAppComponent,
+        WhatsAppModalComponent,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
 })
 export class AppComponent {
-  isWhatsAppModalOpen = false;
+    isWhatsAppModalOpen = false;
 
-  handleOpenWhatsApp(): void {
-    this.isWhatsAppModalOpen = true;
-  }
+    handleOpenWhatsApp(): void {
+        this.isWhatsAppModalOpen = true;
+    }
 
-  handleCloseWhatsApp(): void {
-    this.isWhatsAppModalOpen = false;
-  }
+    handleCloseWhatsApp(): void {
+        this.isWhatsAppModalOpen = false;
+    }
 }

@@ -35,6 +35,8 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     googleMapsUrl: 'https://maps.app.goo.gl/MBiSXGiSDfaGrEqq7',
     instagramUrl: 'https://www.instagram.com/pehnavarj01/',
     instagramHandle: '@pehnavarj01',
+    youtubeUrl: 'https://www.youtube.com/@PehnavaWaleBhaiya',
+    youtubeHandle: '@PehnavaWaleBhaiya',
     whatsappNumber: WHATSAPP_NUMBER,
     whatsappDisplayNumber: WHATSAPP_DISPLAY_NUMBER,
     storeTimings: '10:00 AM – 9:00 PM',

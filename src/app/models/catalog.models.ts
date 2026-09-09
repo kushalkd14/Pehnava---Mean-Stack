@@ -12,6 +12,8 @@ export interface BusinessConfig {
   googleMapsUrl: string;
   instagramUrl: string;
   instagramHandle: string;
+  youtubeUrl: string;
+  youtubeHandle: string;
   whatsappNumber: string;
   whatsappDisplayNumber: string;
   storeTimings: string;
@@ -55,6 +57,8 @@ export interface Store {
   googleMapsUrl: string;
   instagramUrl: string;
   instagramHandle: string;
+  youtubeUrl: string;
+  youtubeHandle: string;
   whatsappNumber: string;
   whatsappDisplayNumber: string;
   storeTimings: string;
